@@ -34,7 +34,7 @@ class Navbar extends Component {
   constructor(props){
     super(props);
     this.state = {
-      logo: 'prabeen',
+      logo: 'TECHSCRIPT',
       open: false
     }
     this.handleToggle = this.handleToggle.bind(this);

@@ -33,9 +33,11 @@ class App extends Component {
 
 
   render() {
+    {console.log(process.env.PUBLIC_URL)}
     return (
       <MuiThemeProvider>
-        <BrowserRouter basename="https://prabeen04.github.io/react-app">
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
+
           <div>
           <Navbar/>
             <Switch>
