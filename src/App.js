@@ -40,6 +40,7 @@ class App extends Component {
           <Navbar/>
             <Switch>
               <Route exact path="/" component={Home}/>
+              <Route exact path="/react-app" component={Home}/>
               <Route exact path="/about" component={About}/>
               <Route exact path="/feed" component={Feed}/>
               <Route exact path="/profile" component={Profile}/>
