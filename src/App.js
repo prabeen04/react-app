@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {
-  BrowserRouter,
+  BrowserRouter as Router,
   Switch,
   Route,
   Link
@@ -36,7 +36,7 @@ class App extends Component {
     {console.log(process.env.PUBLIC_URL)}
     return (
       <MuiThemeProvider>
-        <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <Router basename={process.env.PUBLIC_URL}>
 
           <div>
           <Navbar/>
@@ -53,7 +53,7 @@ class App extends Component {
               <Route component={NotFound}/>
             </Switch>
           </div>
-        </BrowserRouter>
+        </Router>
     </MuiThemeProvider>
     );
   }
