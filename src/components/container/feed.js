@@ -4,7 +4,7 @@ class Feed extends React.Component{
 
   render(){
     return(
-      <h1>Home Component</h1>
+      <h1>Feed Component</h1>
     );
   }
 

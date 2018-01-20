@@ -22,7 +22,8 @@ const style = {
   paper: {
     display: 'inline-block',
     float: 'left',
-    // margin: '16px 32px 16px 0',
+    width: 230,
+     margin: '16px 32px 16px 0',
   },
   rightIcon: {
     textAlign: 'center',
