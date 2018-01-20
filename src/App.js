@@ -22,6 +22,7 @@ import NotFound from './components/container/notfound';
 
 import './App.css';
 
+
 class App extends Component {
   constructor(props){
     super(props);
@@ -34,7 +35,7 @@ class App extends Component {
   render() {
     return (
       <MuiThemeProvider>
-        <Router>
+        <Router basename="https://prabeen04.github.io/react-app/">
           <div>
           <Navbar/>
             <Switch>
