@@ -35,7 +35,7 @@ class App extends Component {
   render() {
     return (
       <MuiThemeProvider>
-        <Router basename="https://prabeen04.github.io/react-app/">
+        <Router basename={process.env.PUBLIC_URL}>
           <div>
           <Navbar/>
             <Switch>
