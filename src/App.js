@@ -35,7 +35,7 @@ class App extends Component {
   render() {
     return (
       <MuiThemeProvider>
-        <BrowserRouter basename={"https://prabeen04.github.io/react-app"}>
+        <BrowserRouter basename="https://prabeen04.github.io/react-app">
           <div>
           <Navbar/>
             <Switch>
