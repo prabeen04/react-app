@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {
-  BrowserRouter as Router,
+  BrowserRouter,
   Switch,
   Route,
   Link
@@ -35,23 +35,23 @@ class App extends Component {
   render() {
     return (
       <MuiThemeProvider>
-        <Router>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
           <div>
           <Navbar/>
             <Switch>
-              <Route exact path={process.env.PUBLIC_URL +"/" }component={Home}/>
-              <Route exact path={process.env.PUBLIC_URL +"/react-app"} component={Home}/>
-              <Route exact path={process.env.PUBLIC_URL +"/about"} component={About}/>
-              <Route exact path={process.env.PUBLIC_URL +"/feed"} component={Feed}/>
-              <Route exact path={process.env.PUBLIC_URL +"/profile"} component={Profile}/>
-              <Route exact path={process.env.PUBLIC_URL +"/chat"} component={Chat}/>
-              <Route exact path={process.env.PUBLIC_URL +"/gallary"} component={Gallary}/>
-              <Route exact path={process.env.PUBLIC_URL +"/login"} component={Login}/>
-              <Route exact path={process.env.PUBLIC_URL +"/signup"} component={Signup}/>
+              <Route exact path="/" component={Home}/>
+              <Route exact path="/react-app" component={Home}/>
+              <Route exact path="/about" component={About}/>
+              <Route exact path="/feed" component={Feed}/>
+              <Route exact path="/profile" component={Profile}/>
+              <Route exact path="/chat" component={Chat}/>
+              <Route exact path="/gallary" component={Gallary}/>
+              <Route exact path="/login" component={Login}/>
+              <Route exact path="/signup" component={Signup}/>
               <Route component={NotFound}/>
             </Switch>
           </div>
-        </Router>
+        </BrowserRouter>
     </MuiThemeProvider>
     );
   }
