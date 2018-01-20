@@ -13,43 +13,25 @@ import Download from 'material-ui/svg-icons/file/file-download';
 import Delete from 'material-ui/svg-icons/action/delete';
 import FontIcon from 'material-ui/FontIcon';
 
-const style = {
-  paper: {
-    display: 'inline-block',
-    float: 'left',
-    margin: '16px 32px 16px 0',
-  },
-  rightIcon: {
-    textAlign: 'center',
-    lineHeight: '24px',
-  },
-};
+
 
 export default class DrawerUndockedExample extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {open: false};
-  }
-
-  handleToggle = () => this.setState({open: !this.state.open});
-
-  handleClose = () => this.setState({open: false});
 
   render() {
     return (
       <div>
         <RaisedButton
           label="Open Drawer"
-          onClick={this.handleToggle}
+          onClick={this.props.handleToggle}
         />
         <Drawer
           docked={false}
           width={230}
-          open={this.state.open}
+          open={this.props.isOpen}
           onRequestChange={(open) => this.setState({open})}
         >
-          <MenuItem onClick={this.handleClose} primaryText="" leftIcon={<RemoveRedEye />} />
+          <MenuItem onClick={this.props.handleToggle} primaryText="" leftIcon={<RemoveRedEye />} />
           <i onClick={this.handleClose} className="fa fa-bars fa-2x"></i>
           <div>
             <Paper style={style.paper}>

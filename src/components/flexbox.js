@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import Profile from './container/profile'
+import Profile from './container/profile';
+import About from './container/about';
+import Form from './container/form';
 
 class Flexbox extends Component {
   constructor(props) {
@@ -22,30 +24,29 @@ class Flexbox extends Component {
   }
   render() {
     return (
-      <div className="flexbox-container">
-        <div className="flex-item">
-          <Profile />
-        </div>
-        <div className="flex-item">
-          <h4>{this.props.flexState}</h4>
-        </div>
-        <div className="flex-item">
-          <h4>{this.state.user.login}</h4>
-        </div>
-        <div className="flex-item">
-          <h4>third column</h4>
-        </div>
-        <div className="flex-item">
-          <h4>{this.state.title}</h4>
-        </div>
-        <div className="flex-item">
-          <h4>{this.props.flexState}</h4>
-        </div>
-        <div className="flex-item">
-          <h4>third column</h4>
-        </div>
-        <div className="flex-item">
-          <h4>third column</h4>
+      <div>
+        <Profile />
+        <div className="flexbox-container">
+          <div className="flex-item">
+            <Form />
+          </div>
+          <div className="flex-item">
+            <h4>{this.state.user.url}</h4>
+          </div>
+
+            <About className="flex-item" about = {"About Props"}/>
+          <div className="flex-item">
+            <h4>{this.state.title}</h4>
+          </div>
+          <div className="flex-item">
+            <h4>{this.props.flexState}</h4>
+          </div>
+          <div className="flex-item">
+            <h4>third column</h4>
+          </div>
+          <div className="flex-item">
+            <h4>third column</h4>
+          </div>
         </div>
       </div>
     );
