@@ -3,13 +3,10 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from 'react-router-dom';
 
-import RaisedButton from 'material-ui/RaisedButton';
 import Navbar from './components/navbar';
-import Flexbox from './components/flexbox';
 import Home from './components/container/home';
 import About from './components/container/about';
 import Feed from './components/container/feed';
@@ -33,7 +30,6 @@ class App extends Component {
 
 
   render() {
-    {console.log(process.env.PUBLIC_URL)}
     return (
       <MuiThemeProvider>
         <Router basename={process.env.PUBLIC_URL}>

@@ -2,25 +2,12 @@ import React from 'react';
 import AutoComplete from 'material-ui/AutoComplete';
 import RaisedButton from 'material-ui/RaisedButton';
 
-const colors = [
-  'Red',
-  'Orange',
-  'Yellow',
-  'Green',
-  'Blue',
-  'Purple',
-  'Black',
-  'White'
-];
 
 const style = {
   margin: 12,
   backgroundColor: 'red'
 };
-const menuProps = {
-  desktop: true,
-  disableAutoFocus: true
-};
+
 class Home extends React.Component {
   constructor(props) {
     super(props);
