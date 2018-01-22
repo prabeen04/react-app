@@ -7,40 +7,54 @@ a{
 }
 .about{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-content: center;
   flex-wrap: wrap;
   align-items: center;
   color: #555;
+  margin: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 1rem;
+  box-shadow: 0px 9px 10px #aaa;
 }
 .flex-basis-about1{
-flex-basis: 40%;
+  flex-basis: 40%;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .flex-basis-about2{
-flex-basis: 60%;
+  flex-basis: 60%;
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  flex-wrap: wrap;
+  align-items: center;
 }
 .desc-img{
   height: 400px;
 }
-.about > h1{
+.about-heading > h1{
   color: #fff;
   padding: 2rem;
   border-radius: 1rem;
-  background: rgba(15, 15, 15, 0.76);
+  background: rgba(101, 94, 94, 0.76);
   transition: 0.3s all linear;
 }
-.about > h1:hover{
+.about-heading > h1:hover{
   transform: scale(1.2);
 }
-.about > h3{
+.about-heading > h3{
   color: #ffffff;
   padding: 1.3rem;
   border-radius: 1rem;
   background: rgba(207, 203, 203, 0.63);
   transition: 0.3s all linear;
 }
-.about > h3:hover{
+.about-heading > h3:hover{
   transform: scaleY(1.2);
 }
 .flexbox-container{
@@ -70,4 +84,21 @@ flex-basis: 60%;
   background-position: center;
   height: 90vh;
   width: 100%;
+}
+/* Login styles */
+.login{
+  background: url('./assets/images/planet.jpg') cover no-repeat center;
+  height: 90vh;
+  width: 100%;
+}
+.login-box{
+  background: rgba(245, 240, 240, 0.82);
+  width: 500px;
+  height: 400px;
+  padding: 3rem;
+  margin-top: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
