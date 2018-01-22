@@ -11,7 +11,7 @@ class About extends React.Component{
   render(){
     return (
       <div>
-        <Paper style={style} zDepth={5}>
+        <Paper style={style} zDepth={3}>
           <h2> About Component</h2>
           <h3> Props Received: {this.props.about}</h3>
         </Paper>
