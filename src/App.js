@@ -10,6 +10,7 @@ import Navbar from './components/navbar';
 import Home from './components/container/home';
 import About from './components/container/about';
 import Feed from './components/container/feed';
+import NewsDetail from './components/container/news-detail';
 import Chat from './components/container/chat';
 import Profile from './components/container/profile';
 import Gallary from './components/container/gallary';
@@ -41,6 +42,7 @@ class App extends Component {
               <Route exact path="/react-app" component={Home}/>
               <Route exact path="/about" component={About}/>
               <Route exact path="/feed" component={Feed}/>
+              <Route exact path="/news-detail" component={NewsDetail}/>
               <Route exact path="/profile" component={Profile}/>
               <Route exact path="/chat" component={Chat}/>
               <Route exact path="/gallary" component={Gallary}/>
