@@ -104,12 +104,13 @@ a{
 }
 .news-container{
   display: flex;
-  justify-content: space-evenly;
   flex-wrap: wrap;
+  justify-content: space-evenly;
   align-items: center;
   color: #555;
 }
 .news-item{
-  height: 400px;
-  width: 300px;
+  height: 100%;
+  width: 380px;
+  margin: 4px;
 }

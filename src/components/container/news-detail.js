@@ -28,13 +28,13 @@ class NewsDetail extends React.Component{
   render(){
     return(
       <div className="news-container">
-        <div className="news-item">
         {this.state.articles.map((article, index) => {
-          return  <Card>
+          return  <Card
+            className='news-item'>
                     <CardHeader
                       title={article.author}
                       subtitle={article.publishedAt}
-                      avatar="images/jsa-128.jpg"
+                      avatar={article.urlToImage}
                     />
                     <CardMedia
                       overlay={<CardTitle title="Overlay title" subtitle="Overlay subtitle" />}
@@ -49,7 +49,6 @@ class NewsDetail extends React.Component{
                     </CardActions>
                   </Card>
         })}
-        </div>
       </div>
     );
   }
