@@ -2,16 +2,24 @@ import React from 'react';
 import NewsSearch from './news-search';
 import NewsButton from './news-button';
 
+import { Route, Redirect } from 'react-router-dom';
+
 class Feed extends React.Component{
   constructor(props) {
     super(props);
-
+      console.log('this.props');
+      console.log(this.props);
     this.state = {
       news: []
     }
+    this.navigate = this.navigate.bind(this);
 }
-    handleClick(e){
-      console.log(e);
+    navigate(param){
+      console.log(param);
+      this.props.history.push({
+          pathname: '/news-detail',
+          state: { detail: param }
+        });
     }
       componentWillMount() {
         fetch('https://newsapi.org/v1/sources').then(res => res.json()).then(data => {
@@ -29,8 +37,8 @@ class Feed extends React.Component{
       }
       render() {
         return (<div className="flexbox-container">
-            <NewsSearch news={this.state.news} />
-            <NewsButton news={this.state.news}  />
+            <NewsSearch news={this.state.news} navigate={this.navigate} />
+            <NewsButton news={this.state.news} navigate={this.navigate} />
         </div>);
       }
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route, Redirect, Link } from 'react-router-dom'
 import RaisedButton from 'material-ui/RaisedButton';
 
 const style = {
@@ -12,11 +13,13 @@ class NewsButton extends React.Component{
       this.handleClick = this.handleClick.bind(this);
   }
 
-  handleClick(e){
-    // this.props.history.push('/news-detail');
+  handleClick(param){
+    console.log('news buttin clicked');
+      this.props.navigate(param);
   }
   render(){
     return(
+
       <div style={style}>
         {this.props.news.map(news =>{
            return <RaisedButton
@@ -24,7 +27,7 @@ class NewsButton extends React.Component{
                       key={news.id}
                       style={style}
                       primary={true}
-                      onClick={this.handleClick} />
+                      onClick={() => this.handleClick(news.id)} />
         })}
       </div>
     );

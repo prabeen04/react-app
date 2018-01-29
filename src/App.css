@@ -102,3 +102,14 @@ a{
   flex-direction: column;
   align-items: center;
 }
+.news-container{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  color: #555;
+}
+.news-item{
+  height: 400px;
+  width: 300px;
+}
