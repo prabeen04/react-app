@@ -1,4 +1,4 @@
-import { auth } from '../../firebase';
+import { auth, firebase } from '../../firebase';
 import React from 'react';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -24,6 +24,7 @@ class Login extends React.Component{
   constructor(props){
     super(props);
     console.log(auth);
+    console.log(firebase.auth);
     this.state = {...INITIAL_STATE};
     this.handleSubmit  = this.handleSubmit.bind(this);
   }
@@ -31,9 +32,10 @@ class Login extends React.Component{
 handleSubmit = (event) => {
   console.log(event);
   event.preventDefault();
-  auth.doSignInWithEmailAndPassword(this.state.email, this.state.password)
+    auth.doSignInWithEmailAndPassword(this.state.email, this.state.password)
   .then(authUser => {
     console.log(authUser);
+    this.props.history.push('/feed')
   })
   .catch(error => {
     console.log(error);

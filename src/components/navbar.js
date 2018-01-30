@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
+import{ auth } from '../firebase';
 import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
 import MenuItem from 'material-ui/MenuItem';
@@ -35,10 +35,20 @@ class Navbar extends Component {
       logo: 'TECHSCRIPT',
       open: false
     }
+    console.log(props);
     this.handleToggle = this.handleToggle.bind(this);
+    this.handleSignOut = this.handleSignOut.bind(this);
   }
 
   handleToggle = () =>this.setState({open: !this.state.open})
+  handleSignOut = () => {
+    this.setState({open: !this.state.open});
+    auth.doSignOut()
+    .then(() => {
+      console.log('signed out successfully');
+    })
+    .catch(err => console.log(err));
+  }
   render() {
     return (
       <div>
@@ -79,7 +89,11 @@ class Navbar extends Component {
               <Link to="/signup" onClick={this.handleToggle}>
                 <MenuItem primaryText="Signup" leftIcon={<Input />} />
               </Link>
-
+                <MenuItem
+                   primaryText="SignOut"
+                  leftIcon={<Input />}
+                  onClick = {this.handleSignOut}
+                  />
               </Menu>
             </Paper>
         </Drawer>
