@@ -11,7 +11,8 @@ class NewsSearch extends React.Component{
         dataSource={this.props.news.map(news=>{
           return news.name
         })}
-        filter={AutoComplete.caseInsensitiveFilter}/>
+        filter={AutoComplete.caseInsensitiveFilter}
+        onNewRequest={(chosenRequest: string, index: number)=>console.log(chosenRequest)}/>
     );
   }
 }
