@@ -13,7 +13,8 @@ const labelStyle = {
 const INITIAL_STATE = {
   email: '',
   password: '',
-  error: ''
+  error: '',
+  message: ''
 }
 
 const byPropKey = (propertyName, value) => () => ({
@@ -23,12 +24,17 @@ const byPropKey = (propertyName, value) => () => ({
 class Login extends React.Component{
   constructor(props){
     super(props);
-    console.log(auth);
-    console.log(firebase.auth);
+    console.log(props);
     this.state = {...INITIAL_STATE};
     this.handleSubmit  = this.handleSubmit.bind(this);
   }
+componentWillMount(){
 
+  if(this.props.location.state){
+    this.setState({message: this.props.location.state.message});
+  }
+
+}
 handleSubmit = (event) => {
   console.log(event);
   event.preventDefault();
@@ -39,6 +45,9 @@ handleSubmit = (event) => {
   })
   .catch(error => {
     console.log(error);
+    this.setState({
+      error
+    })
   });
 
 }
@@ -83,6 +92,7 @@ handleSubmit = (event) => {
               disabled = {isInvalid}
                />
          </form>
+         { error && <p>{error.message}</p> }
        </div>
      </div>
     );

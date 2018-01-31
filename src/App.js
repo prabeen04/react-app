@@ -5,6 +5,7 @@ import {
   Switch,
   Route
 } from 'react-router-dom';
+import { firebase } from './firebase';
 
 import Navbar from './components/navbar';
 import Home from './components/container/home';
@@ -25,10 +26,16 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      myState: 'this is my state',
+      authUser: null,
     }
   }
-
+componentDidMount(){
+  firebase.auth.onAuthStateChanged(authUser => {
+    authUser
+          ? this.setState({ authUser })
+          : this.setState({ authUser: null });
+  });
+}
 
   render() {
     return (
@@ -36,12 +43,12 @@ class App extends Component {
         <Router basename={process.env.PUBLIC_URL}>
 
           <div>
-          <Navbar/>
+          <Navbar authUser={this.state.authUser}/>
             <Switch>
               <Route exact path="/" component={Home}/>
               <Route exact path="/react-app" component={Home}/>
-              <Route exact path="/about" component={About}/>
-              <Route exact path="/feed" component={Feed}/>
+              <Route exact path="/about" render={()=><About authUser={this.state.authUser}/>}/>
+              <Route exact path="/feed" component={Feed} />
               <Route exact path="/news-detail" component={NewsDetail}/>
               <Route exact path="/profile" component={Profile}/>
               <Route exact path="/chat" component={Chat}/>

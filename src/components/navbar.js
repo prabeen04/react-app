@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import{ auth } from '../firebase';
 import AppBar from 'material-ui/AppBar';
 import Drawer from 'material-ui/Drawer';
@@ -46,6 +46,7 @@ class Navbar extends Component {
     auth.doSignOut()
     .then(() => {
       console.log('signed out successfully');
+      this.props.history.push('/login')
     })
     .catch(err => console.log(err));
   }
@@ -103,4 +104,4 @@ class Navbar extends Component {
   }
 }
 
-export default Navbar;
+export default withRouter(Navbar);

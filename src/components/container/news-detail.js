@@ -36,9 +36,7 @@ class NewsDetail extends React.Component{
                       subtitle={article.publishedAt}
                       avatar={article.urlToImage}
                     />
-                    <CardMedia
-                      overlay={<CardTitle title="Overlay title" subtitle="Overlay subtitle" />}
-                    >
+                    <CardMedia>
                       <img src={article.urlToImage} alt="" />
                     </CardMedia>
                     <CardTitle title={article.title} subtitle={article.publishedAt} />

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import Paper from 'material-ui/Paper';
 import Image from '../../assets/images/abstract.jpg';
 import ResponsiveImage from '../../assets/images/responsive.png';
@@ -9,8 +10,17 @@ const style = {
   backgroundImage: `url(${Image})`
 }
 class About extends React.Component{
-
+  constructor(props){
+    super(props);
+    console.log(window.localStorage)
+    console.log(props);
+  }
   render(){
+    if(!this.props.authUser){
+      return(<Redirect to={{
+        pathname:'/login',
+        state: {message: 'please login to view this page'}}}/>);
+    }
     return (
       <div>
         <Paper style={style} zDepth={3} className="about-paper">
