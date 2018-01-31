@@ -27,6 +27,7 @@ class App extends Component {
     this.state = {
       myState: 'this is my state',
     }
+    console.log(props)
   }
 
 
