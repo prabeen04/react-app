@@ -26,18 +26,24 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      authUser: null,
+      authUser: localStorage.getItem('user') || null,
     }
+    console.log(this.state.authUser.uid)
   }
 componentDidMount(){
   firebase.auth.onAuthStateChanged(authUser => {
-    authUser
-          ? this.setState({ authUser })
-          : this.setState({ authUser: null });
+    if(authUser){
+      this.setState({authUser});
+      localStorage.setItem('user', authUser);
+    }else{
+    this.setState({authUser: null});
+    localStorage.setItem('user', null);
+    }
   });
 }
 
   render() {
+    console.log(localStorage.getItem('user'));
     return (
       <MuiThemeProvider>
         <Router basename={process.env.PUBLIC_URL}>
