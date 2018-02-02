@@ -38,8 +38,11 @@ class Navbar extends Component {
     console.log(props);
     this.handleToggle = this.handleToggle.bind(this);
     this.handleSignOut = this.handleSignOut.bind(this);
+    this.titleClick = this.titleClick.bind(this);
   }
-
+  titleClick = () =>{
+    this.props.history.push('/');
+  }
   handleToggle = () =>this.setState({open: !this.state.open})
   handleSignOut = () => {
     this.setState({open: !this.state.open});
@@ -58,6 +61,8 @@ class Navbar extends Component {
         title={this.state.logo}
         iconClassNameRight="muidocs-icon-navigation-expand-more"
         onLeftIconButtonClick={ this.handleToggle }
+        onTitleClick={this.titleClick}
+        titleStyle={{cursor: 'pointer'}}
       />
         <Drawer
           docked={false}
@@ -68,33 +73,46 @@ class Navbar extends Component {
           <MenuItem onClick={this.handleToggle} primaryText="" leftIcon={<Dashboard />} />
             <Paper style={style.paper}>
               <Menu>
-              <Link to="/about" onClick={this.handleToggle}>
-                 <MenuItem primaryText="About" leftIcon={<Devices />} />
-              </Link>
-              <Link to="/feed" onClick={this.handleToggle}>
-                <MenuItem primaryText="Feed" leftIcon={<Forum />} />
-              </Link>
-              <Link to="/profile" onClick={this.handleToggle}>
-                <MenuItem primaryText="Profile" leftIcon={<AccountCircle />} />
-              </Link>
-              <Link to="/chat" onClick={this.handleToggle}>
-                <MenuItem primaryText="Chat Room" leftIcon={<QuestionAnswer />} />
-              </Link>
-              <Link to="/gallary" onClick={this.handleToggle}>
-                <MenuItem primaryText="Gallary" leftIcon={<Theaters />} />
-              </Link>
-              <Divider />
-              <Link to="/login" onClick={this.handleToggle}>
-                <MenuItem primaryText="Login" leftIcon={<Input />} />
-              </Link>
-              <Link to="/signup" onClick={this.handleToggle}>
-                <MenuItem primaryText="Signup" leftIcon={<Input />} />
-              </Link>
-                <MenuItem
-                   primaryText="SignOut"
-                  leftIcon={<Input />}
-                  onClick = {this.handleSignOut}
-                  />
+                {
+                  this.props.authUser
+                  ?(
+                    <div>
+                    <Link to="/about" onClick={this.handleToggle}>
+                       <MenuItem primaryText="About" leftIcon={<Devices />} />
+                    </Link>
+                    <Link to="/feed" onClick={this.handleToggle}>
+                      <MenuItem primaryText="Feed" leftIcon={<Forum />} />
+                    </Link>
+                    <Link to="/profile" onClick={this.handleToggle}>
+                      <MenuItem primaryText="Profile" leftIcon={<AccountCircle />} />
+                    </Link>
+                    <Link to="/chat" onClick={this.handleToggle}>
+                      <MenuItem primaryText="Chat Room" leftIcon={<QuestionAnswer />} />
+                    </Link>
+                    <Link to="/gallary" onClick={this.handleToggle}>
+                      <MenuItem primaryText="Gallary" leftIcon={<Theaters />} />
+                    </Link>
+                      <MenuItem
+                         primaryText="SignOut"
+                        leftIcon={<Input />}
+                        onClick = {this.handleSignOut}
+                        />
+                      </div>
+                  )
+                  :(<div>
+                    <Link to="/about" onClick={this.handleToggle}>
+                       <MenuItem primaryText="About" leftIcon={<Devices />} />
+                    </Link>
+                    <Link to="/login" onClick={this.handleToggle}>
+                      <MenuItem primaryText="Login" leftIcon={<Input />} />
+                    </Link>
+                    <Link to="/signup" onClick={this.handleToggle}>
+                      <MenuItem primaryText="Signup" leftIcon={<Input />} />
+                    </Link>
+                  </div>
+                  )
+                }
+
               </Menu>
             </Paper>
         </Drawer>

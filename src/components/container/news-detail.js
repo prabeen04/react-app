@@ -10,20 +10,22 @@ class NewsDetail extends React.Component{
     }
   }
   componentWillMount(){
-    fetch(`https://newsapi.org/v1/articles?source=${this.props.location.state.detail}&sortBy=top&apiKey=d1cfbf5cf1e74757a5fad5cc65fd17eb`)
-    .then(res => res.json())
-    .then(data => {
-      console.log(data);
+    if(this.props.location.state){
+      fetch(`https://newsapi.org/v1/articles?source=${this.props.location.state.detail}&sortBy=top&apiKey=d1cfbf5cf1e74757a5fad5cc65fd17eb`)
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
 
-      this.setState({articles: data.articles});
-      // console.log(items);
-      // let sources = data.sources.map(source => {
-      //   return (<NewsButton label={source.name} getNews={this.handleClick}/>)
-      // })
-      // this.setState({newsFeed: sources})
-    }).catch((err) => {
-      console.log(err);
-    });
+        this.setState({articles: data.articles});
+        // console.log(items);
+        // let sources = data.sources.map(source => {
+        //   return (<NewsButton label={source.name} getNews={this.handleClick}/>)
+        // })
+        // this.setState({newsFeed: sources})
+      }).catch((err) => {
+        console.log(err);
+      });
+    }
   }
   render(){
     return(
