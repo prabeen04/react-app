@@ -54,11 +54,11 @@ componentDidMount(){
               <Route exact path="/" component={Home}/>
               <Route exact path="/react-app" component={Home}/>
               <Route exact path="/about" render={()=><About authUser={this.state.authUser}/>}/>
-              <Route exact path="/feed" component={Feed} />
+              <Route exact path="/feed"  render={(props)=><Feed {...props} authUser={this.state.authUser}/>}/>
               <Route exact path="/news-detail" component={NewsDetail}/>
-              <Route exact path="/profile" component={Profile}/>
-              <Route exact path="/chat" component={Chat}/>
-              <Route exact path="/gallary" component={Gallary}/>
+              <Route exact path="/profile" render={(props)=><profile {...props} authUser={this.state.authUser}/>}/>
+              <Route exact path="/chat" render={(props)=><Chat {...props} authUser={this.state.authUser}/>}/>
+              <Route exact path="/gallary" render={(props)=><Gallary {...props} authUser={this.state.authUser}/>}/>
               <Route exact path="/login" component={Login}/>
               <Route exact path="/signup" component={Signup}/>
               <Route path="*" component={NotFound}/>

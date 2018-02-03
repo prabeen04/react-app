@@ -5,6 +5,7 @@ import Image from '../../assets/images/abstract.jpg';
 import ResponsiveImage from '../../assets/images/responsive.png';
 import MobileImage from '../../assets/images/mobile-device.png';
 
+
 const style = {
   padding: 40,
   backgroundImage: `url(${Image})`
@@ -36,7 +37,7 @@ class About extends React.Component{
           </div>
           <div className="flex-basis-about1">
             <h2> Explore the new React App</h2>
-              <p>This is a starter app for react and material it doesn't have anything extra-ordinary but it is going to be soon.</p>
+              <p>This is a starter application in React and Material it doesn't have anything extra-ordinary but it is going to be soon.</p>
           </div>
         </div>
 
