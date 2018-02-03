@@ -63,6 +63,7 @@ handleSubmit = (event) => {
       email === '';
     return(
       <div style={style} className="flexbox-container login">
+
         <div className="login-box">
             <h1>Login</h1>
           <form onSubmit = {this.handleSubmit}>
@@ -93,7 +94,7 @@ handleSubmit = (event) => {
                />
          </form>
          { error && <p>{error.message}</p> }
-
+        {this.props.location.state? <h3>{this.props.location.state.message}</h3>: <h1></h1>}
        </div>
      </div>
     );
