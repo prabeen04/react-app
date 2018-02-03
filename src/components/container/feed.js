@@ -30,6 +30,11 @@ class Feed extends React.Component{
         });
       }
       render() {
+        if(!this.props.authUser){
+          return(<Redirect to={{
+            pathname:'/login',
+            state: {message: 'please login to view this page'}}}/>);
+        }
         return(
         <div>
             <div className="flexbox-container">

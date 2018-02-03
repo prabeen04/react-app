@@ -56,7 +56,7 @@ componentDidMount(){
               <Route exact path="/about" render={()=><About authUser={this.state.authUser}/>}/>
               <Route exact path="/feed"  render={(props)=><Feed {...props} authUser={this.state.authUser}/>}/>
               <Route exact path="/news-detail" component={NewsDetail}/>
-              <Route exact path="/profile" render={(props)=><profile {...props} authUser={this.state.authUser}/>}/>
+              <Route exact path="/profile" component={Profile}/>
               <Route exact path="/chat" render={(props)=><Chat {...props} authUser={this.state.authUser}/>}/>
               <Route exact path="/gallary" render={(props)=><Gallary {...props} authUser={this.state.authUser}/>}/>
               <Route exact path="/login" component={Login}/>
