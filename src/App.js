@@ -28,7 +28,7 @@ class App extends Component {
     this.state = {
       authUser: localStorage.getItem('user') || null,
     }
-    console.log(this.state.authUser.uid)
+    console.log(this.state.authUser)
   }
 componentDidMount(){
   firebase.auth.onAuthStateChanged(authUser => {
