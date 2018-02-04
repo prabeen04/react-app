@@ -71,7 +71,7 @@ class SimpleForm extends Component {
           },
           {
             id: '3',
-            message: 'Hi {previousValue}! What is your gender?',
+            message: 'Hello {previousValue}! What is your gender?',
             trigger: 'gender',
           },
           {
