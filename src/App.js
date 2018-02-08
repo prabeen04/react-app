@@ -30,23 +30,26 @@ class App extends Component {
   }
 
   authListener() {
+      console.log('inside authlistener');
     this.fireBaseListener = firebase.auth.onAuthStateChanged(authUser => {
       if (authUser) {
+        console.log('authUser presents');
         this.setState({authUser});
         localStorage.setItem('user', authUser);
       } else {
+          console.log('authUser not presents');
         this.setState({authUser: null});
-        localStorage.removeItem('user', null);
+        localStorage.removeItem('user', 1);
       }
     });
   }
 
   componentWillUnmount() {
-   this.fireBaseListener && this.fireBaseListener();
-   this.authListener = undefined;
-}
+    console.log(this.fireBaseListener);
+    this.fireBaseListener && this.fireBaseListener();
+    this.authListener = undefined;
+  }
   render() {
-    console.log(localStorage.getItem('user'));
     return (<MuiThemeProvider>
       <Router basename={process.env.PUBLIC_URL}>
 
@@ -55,15 +58,10 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Home}/>
             <Route exact path="/react-app" component={Home}/>
-            <Route exact path="/about" render={() =>< About authUser = {
-                this.state.authUser
-              } />}/>
-            <Route exact path="/feed" render={(props) =>< Feed {
-                ...props
-              }
-              authUser = {
-                this.state.authUser
-              } />}/>
+            <Route exact path="/about" render={(props) =><About {...props}
+              authUser = { this.state.authUser } />}/>
+            <Route exact path="/feed" render={(props) =><Feed { ...props }
+              authUser = { this.state.authUser } />}/>
             <Route exact path="/news-detail" component={NewsDetail}/>
             <Route exact path="/profile" component={Profile}/>
             <Route exact path="/chat" render={(props) =>< Chat {
@@ -78,7 +76,12 @@ class App extends Component {
               authUser = {
                 this.state.authUser
               } />}/>
-            <Route exact path="/login" component={Login}/>
+            <Route exact path="/login" render={(props) =><Login {
+                ...props
+              }
+              authUser = {
+                this.state.authUser
+              } />}/>
             <Route exact path="/signup" component={Signup}/>
             <Route path="*" component={NotFound}/>
           </Switch>

@@ -1,5 +1,6 @@
 import { auth, firebase } from '../../firebase';
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import TextField from 'material-ui/TextField';
 import RaisedButton from 'material-ui/RaisedButton';
 import Image from '../../assets/images/planet.jpg';
@@ -42,7 +43,7 @@ handleSubmit = (event) => {
   .then(authUser => {
     console.log(authUser);
     console.log(this.props);
-    this.props.history.push('/feed')
+    this.props.history.push('/about')
   })
   .catch(error => {
     console.log(error);

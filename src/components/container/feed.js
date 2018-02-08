@@ -32,7 +32,7 @@ class Feed extends React.Component {
     });
   }
   render() {
-    if (!this.props.authUser) {
+    if (window.localStorage.getItem('user') && !this.props.authUser) {
       return (<Redirect to={{
           pathname: '/login',
           state: {

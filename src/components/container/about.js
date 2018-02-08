@@ -13,14 +13,28 @@ const style = {
 class About extends React.Component{
   constructor(props){
     super(props);
-    console.log(window.localStorage)
+    console.log(window.localStorage.getItem('user'))
     console.log(props);
   }
+  componentWillMount(){
+    // console.log(this.props.authUser)
+    // if(this.props.authUser){
+    //   this.props.history.push({
+    //     pathname: '/login',
+    //     state: {
+    //       message: 'please login to view about page'
+    //     }
+    //   });
+    // }
+  }
   render(){
-    if(!this.props.authUser){
-      return(<Redirect to={{
-        pathname:'/login',
-        state: {message: 'please login to view this page'}}}/>);
+    if (!window.localStorage.getItem('user') || !this.props.authUser) {
+      return (<Redirect to={{
+          pathname: '/login',
+          state: {
+            message: 'please login to view this page'
+          }
+        }}/>);
     }
     return (
       <div>
