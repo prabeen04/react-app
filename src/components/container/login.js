@@ -41,6 +41,7 @@ handleSubmit = (event) => {
     auth.doSignInWithEmailAndPassword(this.state.email, this.state.password)
   .then(authUser => {
     console.log(authUser);
+    console.log(this.props);
     this.props.history.push('/feed')
   })
   .catch(error => {
