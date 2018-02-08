@@ -23,31 +23,50 @@ class App extends Component {
     this.state = {
       authUser: localStorage.getItem('user') || null
     }
-    this.authListener = this.authListener.bind(this);
+  //  this.authListener = this.authListener.bind(this);
   }
   componentWillMount() {
-    this.authListener();
+      console.log('this.fireBaseListener');
+    this.authListener = firebase.auth.onAuthStateChanged(authUser => {
+          if (authUser) {
+            console.log('authUser presents');
+            this.setState({authUser: authUser});
+            localStorage.setItem('user', authUser);
+          //   setTimeout(()=>{
+          //   console.log('authUser presents');
+          //   this.setState({authUser: authUser});
+          //   localStorage.setItem('user', authUser);
+          // },5000)
+          } else {
+              console.log('authUser not presents');
+            this.setState({authUser: null});
+            localStorage.removeItem('user', 1);
+          }
+        });
   }
 
-  authListener() {
-      console.log('inside authlistener');
-    this.fireBaseListener = firebase.auth.onAuthStateChanged(authUser => {
-      if (authUser) {
-        console.log('authUser presents');
-        this.setState({authUser});
-        localStorage.setItem('user', authUser);
-      } else {
-          console.log('authUser not presents');
-        this.setState({authUser: null});
-        localStorage.removeItem('user', 1);
-      }
-    });
-  }
+  // authListener() {
+  //
+  //   //   console.log('inside authlistener');
+  //   // firebase.auth.onAuthStateChanged(authUser => {
+  //   //   if (authUser) {setTimeout(()=>{
+  //   //     console.log('authUser presents');
+  //   //     this.setState({authUser: authUser});
+  //   //     localStorage.setItem('user', authUser);
+  //   //   },5000)
+  //   //   } else {
+  //   //       console.log('authUser not presents');
+  //   //     this.setState({authUser: null});
+  //   //     localStorage.removeItem('user', 1);
+  //   //   }
+  //   // });
+  // }
 
   componentWillUnmount() {
-    console.log(this.fireBaseListener);
-    this.fireBaseListener && this.fireBaseListener();
-    this.authListener = undefined;
+    console.log('this.fireBaseListener');
+    this.authListener();
+    // this.fireBaseListener && this.fireBaseListener();
+    // this.authListener = undefined;
   }
   render() {
     return (<MuiThemeProvider>
