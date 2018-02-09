@@ -30,7 +30,15 @@ class Login extends React.Component{
     this.handleSubmit  = this.handleSubmit.bind(this);
   }
 componentWillMount(){
-
+  if(this.props.authUser){
+    console.log('inside login will mount')
+    return (<Redirect to={{
+        pathname: '/about',
+        state: {
+          message: 'you are already logged in'
+        }
+      }}/>);
+  }
   if(this.props.location.state){
     this.setState({message: this.props.location.state.message});
   }

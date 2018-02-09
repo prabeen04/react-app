@@ -1,5 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
+
 import Paper from 'material-ui/Paper';
 import Image from '../../assets/images/abstract.jpg';
 import ResponsiveImage from '../../assets/images/responsive.png';
@@ -17,7 +18,7 @@ class About extends React.Component{
     console.log(props);
   }
   componentWillMount(){
-    console.log(this.props.authUser)
+    console.log(this.props)
     if(!this.props.authUser){
       this.props.history.push({
         pathname: '/login',
@@ -28,14 +29,7 @@ class About extends React.Component{
     }
   }
   render(){
-    // if (window.localStorage.getItem('user') && !this.props.authUser) {
-    //   return (<Redirect to={{
-    //       pathname: '/login',
-    //       state: {
-    //         message: 'please login to view this page'
-    //       }
-    //     }}/>);
-    // }
+    console.log('inside about render');
     return (
       <div>
         <Paper style={style} zDepth={3} className="about-paper">
