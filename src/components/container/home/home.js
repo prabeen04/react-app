@@ -83,7 +83,7 @@ class Home extends React.Component {
           </div>
         </Tab>
       </Tabs>
-      <Divider /><br/>
+      <br/>
       <div className="flex-container">
         <Link to="/ios"><div className="home-card flex-container">
           <i className="fab fa-apple fa-5x home-icon"></i>

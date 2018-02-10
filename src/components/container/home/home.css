@@ -102,12 +102,12 @@
 }
 
 .contact-input{
-  width: 600px;
+  width: 95%;
   border: none;
   padding: 1rem;
   border-radius: 1rem;
   background: rgba(190, 205, 229, 0.5);
-  font-size: 2rem;
+  font-size: 1.6rem;
   color: #fff;
   outline: none;
 
