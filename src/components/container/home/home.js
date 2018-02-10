@@ -127,12 +127,12 @@ class Home extends React.Component {
           <p className="text-color">The best and latest App design , Very neat and clear design with intuitive UI/UX design.
           Mobile is not the future, it is the now. Meet your customers in the environment of their choice, not where it's convenient for you.</p>
         </div>
-        <div className="flex-image-container">
+        <div className="flex-image-container" style={{padding: '4rem'}}>
           <img src={ResponsiveImage}  className="flex-image"/>
         </div>
       </div>
       <div className="flex-container light-background">
-        <div className="flex-image-container">
+        <div className="flex-image-container" style={{padding: '4rem'}}>
           <img src={MacbookImage}  className="flex-image"/>
         </div>
         <div className="flex-description">
@@ -150,6 +150,9 @@ class Home extends React.Component {
             <input type="text" className="contact-input"/>
           </form>
         </div>
+      </div>
+      <div className="flex-container" style={{backgroundColor: '#202c56', fontFamily: 'Nanum Brush Script', fontSize: '1.5rem'}}>
+        <p className="white-heading">Copyright reserved@2018</p>
       </div>
     </div>);
   }
