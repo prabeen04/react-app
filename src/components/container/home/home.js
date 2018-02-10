@@ -141,6 +141,16 @@ class Home extends React.Component {
           Mobile is not the future, it is the now. Meet your customers in the environment of their choice, not where it's convenient for you.</p>
         </div>
       </div>
+      <div className="flex-container contact-background">
+        <div className="flex-container full-width">
+          <h2 className="white-heading" style={{zIndex: 333, fontSize: '2.5rem'}}>Contact Us to Get Started</h2>
+        </div>
+        <div className="flex-container full-width" style={{zIndex: 333}}>
+          <form id="" target="_blank">
+            <input type="text" className="contact-input"/>
+          </form>
+        </div>
+      </div>
     </div>);
   }
 }

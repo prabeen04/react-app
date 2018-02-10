@@ -85,3 +85,36 @@
 .flex-image{
   width: 100%;
 }
+.contact-background{
+  padding: 4rem 1rem;
+  position: relative;
+  background: url('../../../assets/images/sunset.jpeg') fixed;
+}
+.contact-background:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient(to bottom right, #396370, #0eaf67);
+  opacity: 0.76;
+}
+
+.contact-input{
+  width: 600px;
+  border: none;
+  padding: 1rem;
+  border-radius: 1rem;
+  background: rgba(190, 205, 229, 0.5);
+  font-size: 2rem;
+  color: #fff;
+  outline: none;
+
+  transition: 0.2s all ease-in-out;
+}
+.contact-input:focus{
+  background: rgba(20, 56, 186, 0.8);
+}
+@media only screen and (max-width: 648px){
+}

@@ -4,6 +4,12 @@
 .text-color{
   color: #aaa;
 }
+.full-width{
+  width: 100%;
+}
+.white-heading{
+  color: #fff;
+}
 /* content loader spinner*/
 @-webkit-keyframes placeHolderShimmer {
   0% {
