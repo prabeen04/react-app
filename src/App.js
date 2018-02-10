@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import {firebase} from './firebase';
 
 import Navbar from './components/navbar';
-import Home from './components/container/home';
+import Home from './components/container/home/home';
 import About from './components/container/about';
 import Feed from './components/container/feed';
 import NewsDetail from './components/container/news-detail';

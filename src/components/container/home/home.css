@@ -1,0 +1,19 @@
+.tab-paper{
+  margin: 1rem;
+  width: 90vw;
+}
+.flex-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  align-content: space-between;
+}
+.home-card{
+  width: 350px;
+  height: 280px;
+  border: 1px solid #eee;
+  border-radius: 1rem;
+  box-shadow: 4px  8px 13px #ccc;
+  margin-bottom: 1rem;
+}
