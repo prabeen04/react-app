@@ -67,12 +67,30 @@ class Home extends React.Component {
       </Tabs>
       <Divider /><br/>
       <div className="flex-container">
-        <div className="home-card"></div>
-        <div className="home-card"></div>
-        <div className="home-card"></div>
-        <div className="home-card"></div>
-        <div className="home-card"></div>
-        <div className="home-card"></div>
+        <div className="home-card flex-container">
+          <i className="fab fa-apple fa-5x home-icon"></i>
+          <h3>IOS Developement</h3>
+        </div>
+        <div className="home-card flex-container">
+          <i className="fab fa-android fa-5x home-icon"></i>
+          <h3>Android Developement</h3>
+        </div>
+        <div className="home-card flex-container">
+          <i className="fab fa-react fa-5x home-icon"></i>
+          <h3>React Developement</h3>
+        </div>
+        <div className="home-card flex-container">
+          <i className="fab fa-angular fa-5x home-icon"></i>
+          <h3>Angular Developement</h3>
+        </div>
+        <div className="home-card flex-container">
+          <i className="fab fa-node-js fa-5x home-icon"></i>
+          <h3>Node js Developement</h3>
+        </div>
+        <div className="home-card flex-container">
+          <i className="fas fa-globe fa-5x home-icon"></i>
+          <h3>FrontEnd Developement</h3>
+        </div>
       </div>
     </div>);
   }

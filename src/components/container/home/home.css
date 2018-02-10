@@ -16,4 +16,30 @@
   border-radius: 1rem;
   box-shadow: 4px  8px 13px #ccc;
   margin-bottom: 1rem;
+  cursor: pointer;
+  transition: 0.3s all ease-in-out;
+}
+.home-card:hover{
+    box-shadow: 6px  12px 15px #999;
+}
+.home-card>h3{
+  color: #999;
+}
+.fa-apple{
+  color: #8e8e93 !important;
+}
+.fa-android{
+  color: #a4c639 !important;
+}
+.fa-react{
+  color: #00d8ff !important;
+}
+.fa-angular{
+  color: #b52e31 !important;
+}
+.fa-node-js{
+  color: #6cc24a !important;
+}
+.fa-globe{
+  color: #4e5860 !important;
 }
