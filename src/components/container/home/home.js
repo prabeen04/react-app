@@ -8,7 +8,8 @@ import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 import FontIcon from 'material-ui/FontIcon';
 import MapsPersonPin from 'material-ui/svg-icons/maps/person-pin';
-import Image from '../../../assets/images/home-page.jpeg';
+import Image from '../../../assets/images/web.jpg';
+import BubbleButton from '../../common-components/buttons/bubble-button';
 import './home.css';
 
 const styles = {
@@ -31,17 +32,31 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: 'a'
+      value: 'a',
+      heading: 'Bussiness'
     };
   }
 
   handleChange = (value) => {
     this.setState({value: value});
   };
+  componentDidMount(){
 
+  }
   render() {
     return (<div>
-      <Paper style={styles} zDepth={3} className="about-paper"></Paper>
+      <Paper style={styles} zDepth={3} className="about-paper">
+        <div className=" flex-container">
+          <h1 className="landing-heading">Face of your {this.state.heading}</h1>
+        </div>
+        <div className=" flex-container">
+          <p className="landing-text">I strive for two things in design: simplicity and clarity. Great design is born of those two things</p>
+        </div>
+        <div className=" flex-container">
+          <BubbleButton title="Get Started"/>
+        </div>
+
+      </Paper>
       <Tabs value={this.state.value} onChange={this.handleChange}>
         <Tab icon={<FontIcon className = "material-icons" > phone</FontIcon>} label="RECENTS" value="a">
           <div className="flex-container">
