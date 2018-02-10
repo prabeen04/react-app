@@ -1,3 +1,9 @@
+.heading-color{
+  color: #666;
+}
+.text-color{
+  color: #aaa;
+}
 /* content loader spinner*/
 @-webkit-keyframes placeHolderShimmer {
   0% {

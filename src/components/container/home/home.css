@@ -67,3 +67,21 @@
 .fa-globe{
   color: #4e5860 !important;
 }
+.light-background{
+  background: #f4f4f4;
+}
+.flex-image-container{
+  flex-basis: 40%;
+}
+.flex-description{
+  flex-basis: 50%;
+}
+.flex-description>h1{
+  font-size: 2rem;
+}
+.flex-description>p{
+  font-size: 1.2rem;
+}
+.flex-image{
+  width: 100%;
+}
