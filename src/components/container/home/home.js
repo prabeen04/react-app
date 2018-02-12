@@ -61,21 +61,21 @@ class Home extends React.Component {
 
       </Paper>
       <Tabs value={this.state.value} onChange={this.handleChange}>
-        <Tab icon={<FontIcon className = "material-icons" > phone</FontIcon>} label="RECENTS" value="a">
+        <Tab style={{backgroundColor: '#444'}} icon={<FontIcon className = "material-icons" > phone</FontIcon>} label="RECENTS" value="a">
           <div className="flex-container">
             <Paper zDepth={3} className="tab-paper">
 
             </Paper>
           </div>
         </Tab>
-        <Tab icon={<FontIcon className = "material-icons" > favorite</FontIcon>} label="FAVORITES" value="b">
+        <Tab style={{backgroundColor: '#555'}} icon={<FontIcon className = "material-icons" > favorite</FontIcon>} label="FAVORITES" value="b">
           <div className="flex-container">
             <Paper zDepth={3} className="tab-paper">
 
             </Paper>
           </div>
         </Tab>
-        <Tab icon={<MapsPersonPin />} label="NEARBY" value="c">
+        <Tab style={{backgroundColor: '#444'}} icon={<MapsPersonPin />} label="NEARBY" value="c">
           <div className="flex-container">
             <Paper zDepth={3} className="tab-paper">
 
@@ -142,10 +142,10 @@ class Home extends React.Component {
         </div>
       </div>
       <div className="flex-container contact-background">
-        <div className="flex-container full-width">
-          <h2 className="white-heading" style={{zIndex: 333, fontSize: '2.5rem'}}>Contact Us to Get Started</h2>
+        <div className="flex-container">
+          <h2 className="white-heading" style={{zIndex: 333, fontSize: '2.5rem'}}>Contact Me</h2>
         </div>
-        <div className="flex-container full-width" style={{zIndex: 333}}>
+        <div className="flex-container" style={{zIndex: 333}}>
           <form id="" target="_blank">
             <input type="text" className="contact-input"/>
           </form>

@@ -49,6 +49,7 @@ class Navbar extends Component {
     auth.doSignOut()
     .then(() => {
       console.log('signed out successfully');
+      localStorage.removeItem('user');
       this.props.history.push('/login')
     })
     .catch(err => console.log(err));
