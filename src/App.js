@@ -24,9 +24,8 @@ class App extends Component {
       authUser: localStorage.getItem('user') || null
     }
   }
-  componentWillMount() {
-      console.log('this.fireBaseListener');
-    this.authListener = firebase.auth.onAuthStateChanged(authUser => {
+  componentDidMount() {
+  firebase.auth.onAuthStateChanged(authUser => {
           if (authUser) {
             console.log('authUser presents');
             this.setState({authUser: authUser});
@@ -44,29 +43,6 @@ class App extends Component {
         });
   }
 
-  // authListener() {
-  //
-  //   //   console.log('inside authlistener');
-  //   // firebase.auth.onAuthStateChanged(authUser => {
-  //   //   if (authUser) {setTimeout(()=>{
-  //   //     console.log('authUser presents');
-  //   //     this.setState({authUser: authUser});
-  //   //     localStorage.setItem('user', authUser);
-  //   //   },5000)
-  //   //   } else {
-  //   //       console.log('authUser not presents');
-  //   //     this.setState({authUser: null});
-  //   //     localStorage.removeItem('user', 1);
-  //   //   }
-  //   // });
-  // }
-
-  componentWillUnmount() {
-    console.log('this.fireBaseListener');
-    this.authListener();
-    // this.fireBaseListener && this.fireBaseListener();
-    // this.authListener = undefined;
-  }
   render() {
 
     return (<MuiThemeProvider>
