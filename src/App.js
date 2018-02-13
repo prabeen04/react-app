@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route, Redirect} from 'react-router-dom';
 import {firebase} from './firebase';
-
+import{ auth } from './firebase';
 import Navbar from './components/navbar';
 import Home from './components/container/home/home';
 import About from './components/container/about';
@@ -23,6 +23,7 @@ class App extends Component {
     this.state = {
       authUser: localStorage.getItem('user') || null
     }
+    this.signout = this.signout.bind(this);
   }
   componentDidMount() {
   firebase.auth.onAuthStateChanged(authUser => {
@@ -37,19 +38,29 @@ class App extends Component {
           // },5000)
           } else {
               console.log('authUser not presents');
-            this.setState({authUser: null});
-            localStorage.removeItem('user', 1);
+          //  this.setState({authUser: null});
+          //  localStorage.removeItem('user', 1);
           }
         });
   }
-
+signout(){
+  auth.doSignOut()
+  .then(() => {
+    console.log('signed out successfully');
+     this.setState({authUser: null});
+     localStorage.removeItem('user', 1);
+     <Redirect to='/login'/>
+  //  this.props.history.push('/login')
+  })
+  .catch(err => console.log(err));
+}
   render() {
 
     return (<MuiThemeProvider>
       <Router basename={process.env.PUBLIC_URL}>
 
         <div>
-          <Navbar authUser={this.state.authUser}/>
+          <Navbar authUser={this.state.authUser}signout={this.signout}/>
           <Switch>
             <Route exact path="/" component={Home}/>
             <Route exact path="/react-app" component={Home}/>

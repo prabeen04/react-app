@@ -46,13 +46,7 @@ class Navbar extends Component {
   handleToggle = () =>this.setState({open: !this.state.open})
   handleSignOut = () => {
     this.setState({open: !this.state.open});
-    auth.doSignOut()
-    .then(() => {
-      console.log('signed out successfully');
-      localStorage.removeItem('user');
-      this.props.history.push('/login')
-    })
-    .catch(err => console.log(err));
+    this.props.signout();
   }
   render() {
     return (
