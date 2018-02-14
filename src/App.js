@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import {firebase} from './firebase';
-
+import LoadingContainer from './components/common-components/loading-container';
 import Navbar from './components/navbar';
 import Home from './components/container/home/home';
 import About from './components/container/about';
@@ -21,24 +21,21 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      authUser: localStorage.getItem('user') || null
+      authUser: localStorage.getItem('user') || null,
+      loading: true
     }
   }
   componentWillMount() {
       console.log('this.fireBaseListener');
     this.authListener = firebase.auth.onAuthStateChanged(authUser => {
+      console.log('authListener/componentWillMount');
           if (authUser) {
             console.log('authUser presents');
-            this.setState({authUser: authUser});
+            this.setState({authUser: authUser, loading: false});
             localStorage.setItem('user', authUser);
-          //   setTimeout(()=>{
-          //   console.log('authUser presents');
-          //   this.setState({authUser: authUser});
-          //   localStorage.setItem('user', authUser);
-          // },5000)
           } else {
               console.log('authUser not presents');
-            this.setState({authUser: null});
+            this.setState({authUser: null, loading: false});
             localStorage.removeItem('user', 1);
           }
         });
@@ -68,8 +65,11 @@ class App extends Component {
     // this.authListener = undefined;
   }
   render() {
-
-    return (<MuiThemeProvider>
+      if(this.state.loading === true){
+        return(<LoadingContainer />)
+      }
+    return (
+      <MuiThemeProvider>
       <Router basename={process.env.PUBLIC_URL}>
 
         <div>

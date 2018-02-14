@@ -49,9 +49,9 @@ handleSubmit = (event) => {
   event.preventDefault();
     auth.doSignInWithEmailAndPassword(this.state.email, this.state.password)
   .then(authUser => {
-    if(authUser){
-      this.props.history.push('/about')
-    }
+    console.log(authUser);
+    console.log(this.props);
+    this.props.history.push('/about')
   })
   .catch(error => {
     console.log(error);

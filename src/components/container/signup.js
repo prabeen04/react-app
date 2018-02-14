@@ -44,7 +44,7 @@ class Signup extends React.Component{
         .then((authUser) =>{
           console.log(authUser);
           this.setState(() => ({ ...INITIAL_STATE }));
-          this.props.history.push('/feed');
+          this.props.history.push('/about');
         })
         .catch((error) => {
           console.log(error);
