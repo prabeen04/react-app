@@ -16,5 +16,6 @@ class About extends React.Component{
     );
   }
 }
+
 const authCondition = (authUser) => !!authUser;
 export default withAuthorization(authCondition)(About);

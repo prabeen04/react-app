@@ -7,9 +7,9 @@ import LoadingContainer from '../common-components/loading-container';
 const withAuthorization = (authCondition) => (Component) => {
   console.log('inside withAuthorization...');
   class WithAuthorization extends React.Component {
-    constructor(props){
-        super(props);
-        console.log(props);
+    constructor(props, context){
+        super(props, context);
+        console.log(context);
       }
 
     componentDidMount() {
@@ -25,10 +25,10 @@ const withAuthorization = (authCondition) => (Component) => {
 
   }
   WithAuthorization.contextTypes = {
-    authUser: PropTypes.object
+    authUser: PropTypes.string
   };
 
-  return withRouter(withAuthorization);
+  return withRouter(WithAuthorization);
 }
 
 export default withAuthorization;

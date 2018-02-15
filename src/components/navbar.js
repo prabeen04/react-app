@@ -126,6 +126,6 @@ class Navbar extends Component {
   }
 }
 Navbar.contextTypes = {
-authUser: PropTypes.object,
+authUser: PropTypes.string,
 };
 export default withRouter(Navbar);

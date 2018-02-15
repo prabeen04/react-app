@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import {firebase} from './firebase';
@@ -59,6 +60,10 @@ class App extends Component {
       </Router>
     </MuiThemeProvider>);
   }
+
 }
+App.contextTypes = {
+  authUser: PropTypes.string,
+};
 
 export default withAuthentication(App);
