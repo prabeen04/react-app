@@ -3,11 +3,11 @@ import PropTypes from 'prop-types'
 import {firebase} from '../../firebase';
 
 const withAuthentication = (Component) =>{
-  class withAuthentication extends React.Component{
+  class WithAuthentication extends React.Component{
     constructor(props){
         super(props);
         this.state = {
-          authUser: null
+          authUser: localStorage.getItem('user') || null
         }
     };
     getChildContext(){
@@ -20,10 +20,11 @@ const withAuthentication = (Component) =>{
       console.log('withAuthentication HOC');
     this.authListener = firebase.auth.onAuthStateChanged(authUser => {
           if (authUser) {
-            this.setState({authUser: authUser, loading: false});
+            console.log(authUser)
+            this.setState({authUser: authUser});
             localStorage.setItem('user', authUser);
           } else {
-            this.setState({authUser: null, loading: false});
+            this.setState({authUser: null});
             localStorage.removeItem('user', 1);
           }
         });
@@ -36,9 +37,9 @@ const withAuthentication = (Component) =>{
 
   }
 
-  withAuthentication.childContextTypes = {
-    authUser: PropTypes.object,
+  WithAuthentication.childContextTypes = {
+    authUser: PropTypes.string,
   };
-  return withAuthentication;
+  return WithAuthentication;
 }
 export default withAuthentication;

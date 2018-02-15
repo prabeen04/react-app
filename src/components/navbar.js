@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
 import{ auth } from '../firebase';
 import AppBar from 'material-ui/AppBar';
@@ -29,17 +30,20 @@ const style = {
   },
 };
 class Navbar extends Component {
-  constructor(props){
-    super(props);
+
+  constructor(props, context){
+    super(props,context);
     this.state = {
       logo: 'TECHSCRIPT',
       open: false
     }
     console.log(props);
+    console.log(context);
     this.handleToggle = this.handleToggle.bind(this);
     this.handleSignOut = this.handleSignOut.bind(this);
     this.titleClick = this.titleClick.bind(this);
   }
+
   titleClick = () =>{
     this.props.history.push('/');
   }
@@ -74,7 +78,7 @@ class Navbar extends Component {
             <Paper style={style.paper}>
               <Menu>
                 {
-                  this.props.authUser
+                  this.context.authUser
                   ?(
                     <div>
                     <Link to="/about" onClick={this.handleToggle}>
@@ -121,5 +125,7 @@ class Navbar extends Component {
     );
   }
 }
-
+Navbar.contextTypes = {
+authUser: PropTypes.object,
+};
 export default withRouter(Navbar);
