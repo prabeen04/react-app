@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import {firebase} from './firebase';
+import withAuthentication from './components/HOC/withAuthenticationHOC';
+
 import LoadingContainer from './components/common-components/loading-container';
 import Navbar from './components/navbar';
 import Home from './components/container/home/home';
@@ -25,21 +27,7 @@ class App extends Component {
       loading: true
     }
   }
-  componentWillMount() {
-      console.log('this.fireBaseListener');
-    this.authListener = firebase.auth.onAuthStateChanged(authUser => {
-      console.log('authListener/componentWillMount');
-          if (authUser) {
-            console.log('authUser presents');
-            this.setState({authUser: authUser, loading: false});
-            localStorage.setItem('user', authUser);
-          } else {
-              console.log('authUser not presents');
-            this.setState({authUser: null, loading: false});
-            localStorage.removeItem('user', 1);
-          }
-        });
-  }
+
 
   // authListener() {
   //
@@ -65,9 +53,9 @@ class App extends Component {
     // this.authListener = undefined;
   }
   render() {
-      if(this.state.loading === true){
-        return(<LoadingContainer />)
-      }
+      // if(this.state.loading === true){
+      //   return(<LoadingContainer />)
+      // }
     return (
       <MuiThemeProvider>
       <Router basename={process.env.PUBLIC_URL}>
@@ -95,4 +83,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withAuthentication(App);
