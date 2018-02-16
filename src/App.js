@@ -29,11 +29,7 @@ class App extends Component {
     console.log(context);
   }
 
-  componentWillUnmount() {
 
-    this.authListener();
-
-  }
   render() {
       // if(this.state.loading === true){
       //   return(<LoadingContainer />)
