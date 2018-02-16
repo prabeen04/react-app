@@ -1,14 +1,11 @@
 import React from 'react';
-import NewsSearch from './news-search';
 import NewsButton from './news-button';
-
 import withAuthorization from '../HOC/withAuthorizationHOC';
 import {Route, Redirect} from 'react-router-dom';
 
 class Feed extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props);
     this.state = {
       news: []
     }
@@ -19,6 +16,7 @@ class Feed extends React.Component {
     this.props.history.push({
       pathname: '/news-detail',
       state: {
+        news: this.state.news,
         detail: param
       }
     });
@@ -35,7 +33,6 @@ class Feed extends React.Component {
   render() {
     return (<div>
       <div className="flexbox-container">
-        <NewsSearch news={this.state.news} navigate={this.navigate}/>
         <NewsButton news={this.state.news} navigate={this.navigate}/>
       </div>
     </div>);

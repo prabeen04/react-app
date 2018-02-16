@@ -1,5 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
+import NewsSearch from './news-search';
 import  LoadingContainer from '../common-components/loading-container';
 
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
@@ -8,6 +9,7 @@ import RaisedButton from 'material-ui/RaisedButton';
 class NewsDetail extends React.Component{
   constructor(props){
     super(props)
+    console.log(props);
     this.state = {
       loading_state: true,
       articles: []
@@ -32,7 +34,8 @@ class NewsDetail extends React.Component{
     return(<div>
       { this.state.loading_state
         ?<LoadingContainer/>
-        :  <div className="news-container">
+        :<div> <NewsSearch news={this.props.location.state.news}/>
+         <div className="news-container">
             {this.state.articles.map((article, index) => {
               return  <Card
                         className='news-item' key={index}>
@@ -52,6 +55,7 @@ class NewsDetail extends React.Component{
                         </CardActions>
                       </Card>
             })}
+          </div>
           </div>
       }
 </div>
