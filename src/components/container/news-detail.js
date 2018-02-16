@@ -12,12 +12,15 @@ class NewsDetail extends React.Component{
     console.log(props);
     this.state = {
       loading_state: true,
+      news_id: this.props.location.state.detail,
       articles: []
     }
+    this.changeNews  = this.changeNews.bind(this);
   }
   componentWillMount(){
-    if(this.props.location.state){
-      fetch(`https://newsapi.org/v1/articles?source=${this.props.location.state.detail}&sortBy=top&apiKey=d1cfbf5cf1e74757a5fad5cc65fd17eb`)
+    console.log('inside componentDidMount')
+    if(this.state.news_id){
+      fetch(`https://newsapi.org/v1/articles?source=${this.state.news_id}&sortBy=top&apiKey=d1cfbf5cf1e74757a5fad5cc65fd17eb`)
       .then(res => res.json())
       .then(data => {
         this.setState({articles: data.articles, loading_state: false});
@@ -30,11 +33,15 @@ class NewsDetail extends React.Component{
         });
     }
   }
+  changeNews = (news_id) =>{
+    console.log(news_id);
+    this.setState({news_id: news_id})
+  }
   render(){
     return(<div>
       { this.state.loading_state
         ?<LoadingContainer/>
-        :<div> <NewsSearch news={this.props.location.state.news}/>
+        :<div> <NewsSearch filterText = {this.changeNews} news={this.props.location.state.news}/>
          <div className="news-container">
             {this.state.articles.map((article, index) => {
               return  <Card
