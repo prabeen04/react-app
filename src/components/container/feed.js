@@ -2,6 +2,7 @@ import React from 'react';
 import NewsSearch from './news-search';
 import NewsButton from './news-button';
 
+import withAuthorization from '../HOC/withAuthorizationHOC';
 import {Route, Redirect} from 'react-router-dom';
 
 class Feed extends React.Component {
@@ -32,14 +33,6 @@ class Feed extends React.Component {
     });
   }
   render() {
-    if (window.localStorage.getItem('user') && !this.props.authUser) {
-      return (<Redirect to={{
-          pathname: '/login',
-          state: {
-            message: 'please login to view this page'
-          }
-        }}/>);
-    }
     return (<div>
       <div className="flexbox-container">
         <NewsSearch news={this.state.news} navigate={this.navigate}/>
@@ -50,5 +43,5 @@ class Feed extends React.Component {
   }
 
 }
-
-export default Feed;
+const authCondition = (authUser) => !!authUser;
+export default withAuthorization(authCondition)(Feed);

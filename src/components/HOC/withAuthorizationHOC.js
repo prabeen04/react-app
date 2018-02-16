@@ -20,7 +20,7 @@ const withAuthorization = (authCondition) => (Component) => {
       });
     }
     render() {
-      return this.context.authUser ? <Component /> : <LoadingContainer />;
+      return this.context.authUser ? <Component {...this.props}/> : <LoadingContainer />;
     }
 
   }

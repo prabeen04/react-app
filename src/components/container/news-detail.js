@@ -35,7 +35,7 @@ class NewsDetail extends React.Component{
         :  <div className="news-container">
             {this.state.articles.map((article, index) => {
               return  <Card
-                className='news-item'>
+                        className='news-item' key={index}>
                         <CardHeader
                           title={article.author}
                           subtitle={article.publishedAt}
