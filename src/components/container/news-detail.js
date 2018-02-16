@@ -3,7 +3,7 @@ import { Redirect } from 'react-router-dom';
 import  LoadingContainer from '../common-components/loading-container';
 
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
-import FlatButton from 'material-ui/FlatButton';
+import RaisedButton from 'material-ui/RaisedButton';
 
 class NewsDetail extends React.Component{
   constructor(props){
@@ -47,8 +47,8 @@ class NewsDetail extends React.Component{
                         <CardTitle title={article.title} subtitle={article.publishedAt} />
                         <CardText>{article.description}</CardText>
                         <CardActions>
-                          <FlatButton label="View Full News" />
-                          <FlatButton label="Visit SIte" />
+                          <RaisedButton primary={true} label="View Full News" />
+                          <RaisedButton primary={true} label="Visit SIte" />
                         </CardActions>
                       </Card>
             })}
