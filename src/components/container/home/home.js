@@ -3,7 +3,6 @@ import {Redirect, Link} from 'react-router-dom';
 
 import Paper from 'material-ui/Paper';
 import Divider from 'material-ui/Divider';
-import {Tabs, Tab} from 'material-ui/Tabs';
 import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
 import FontIcon from 'material-ui/FontIcon';
@@ -35,14 +34,11 @@ class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: 'a',
       heading: 'Bussiness'
     };
   }
 
-  handleChange = (value) => {
-    this.setState({value: value});
-  };
+
   componentDidMount(){
 
   }
@@ -58,31 +54,7 @@ class Home extends React.Component {
         <div className=" flex-container">
           <BubbleButton title="Get Started"/>
         </div>
-
       </Paper>
-      <Tabs value={this.state.value} onChange={this.handleChange}>
-        <Tab style={{backgroundColor: '#444'}} icon={<FontIcon className = "material-icons" > phone</FontIcon>} label="RECENTS" value="a">
-          <div className="flex-container">
-            <Paper zDepth={3} className="tab-paper">
-
-            </Paper>
-          </div>
-        </Tab>
-        <Tab style={{backgroundColor: '#555'}} icon={<FontIcon className = "material-icons" > favorite</FontIcon>} label="FAVORITES" value="b">
-          <div className="flex-container">
-            <Paper zDepth={3} className="tab-paper">
-
-            </Paper>
-          </div>
-        </Tab>
-        <Tab style={{backgroundColor: '#444'}} icon={<MapsPersonPin />} label="NEARBY" value="c">
-          <div className="flex-container">
-            <Paper zDepth={3} className="tab-paper">
-
-            </Paper>
-          </div>
-        </Tab>
-      </Tabs>
       <br/>
       <div className="flex-container">
         <Link to="/ios"><div className="home-card flex-container">

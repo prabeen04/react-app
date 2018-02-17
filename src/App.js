@@ -8,7 +8,7 @@ import withAuthentication from './components/HOC/withAuthenticationHOC';
 import LoadingContainer from './components/common-components/loading-container';
 import Navbar from './components/navbar';
 import Home from './components/container/home/home';
-import About from './components/container/about';
+import About from './components/container/about/about';
 import Feed from './components/container/feed';
 import NewsDetail from './components/container/news-detail';
 import Chat from './components/container/chat';
@@ -29,11 +29,7 @@ class App extends Component {
     console.log(context);
   }
 
-
   render() {
-      // if(this.state.loading === true){
-      //   return(<LoadingContainer />)
-      // }
     return (
       <MuiThemeProvider>
       <Router basename={process.env.PUBLIC_URL}>
