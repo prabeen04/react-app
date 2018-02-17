@@ -2,6 +2,7 @@ import React from 'react';
 import NewsButton from './news-button';
 import withAuthorization from '../HOC/withAuthorizationHOC';
 import {Route, Redirect} from 'react-router-dom';
+import LoadingContainer from '../common-components/loading-container';
 
 class Feed extends React.Component {
   constructor(props) {
@@ -31,6 +32,9 @@ class Feed extends React.Component {
     });
   }
   render() {
+    if(this.state.news.length ==0){
+      return <LoadingContainer/>;
+    }
     return (<div>
       <div className="flexbox-container">
         <NewsButton news={this.state.news} navigate={this.navigate}/>
