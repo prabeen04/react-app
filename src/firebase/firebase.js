@@ -12,7 +12,8 @@ import * as firebase from 'firebase';
       firebase.initializeApp(config);
   }
 const auth = firebase.auth();
- const provider = new firebase.auth.GoogleAuthProvider();
+ const googleProvider = new firebase.auth.GoogleAuthProvider();
+ const facebookProvider = new firebase.auth.FacebookAuthProvider();
 export {
-  auth,provider,
+  auth, googleProvider, facebookProvider,
 };

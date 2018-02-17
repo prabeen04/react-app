@@ -29,6 +29,7 @@ class Login extends React.Component{
     this.state = {...INITIAL_STATE};
     this.handleSubmit  = this.handleSubmit.bind(this);
     this.signinWithGoogle = this.signinWithGoogle.bind(this);
+    this.signinWithFacebook = this.signinWithFacebook.bind(this);
   }
 componentWillMount(){
   if(this.props.authUser){
@@ -65,9 +66,19 @@ handleSubmit = (event) => {
 
 }
 signinWithGoogle = () =>{
-  auth.doSignInPopup()
+  auth.doSignInGoogle()
   .then(authUser=>{
     console.log('signin with google successfull')
+  })
+  .catch(error =>{
+    console.log(error);
+  });
+}
+
+signinWithFacebook = () =>{
+  auth.doSignInFacebook()
+  .then(authUser=>{
+    console.log('signin with facebook successfull')
   })
   .catch(error =>{
     console.log(error);
@@ -89,6 +100,7 @@ signinWithGoogle = () =>{
         <div className="login-box">
             <h1>Login</h1>
             <button onClick={this.signinWithGoogle}>Sign in with google</button>
+            <button onClick={this.signinWithFacebook}>Sign in with facebook</button>
           <form onSubmit = {this.handleSubmit}>
             <TextField
                floatingLabelText="Enter your email"
