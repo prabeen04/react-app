@@ -68,7 +68,8 @@ handleSubmit = (event) => {
 signinWithGoogle = () =>{
   auth.doSignInGoogle()
   .then(authUser=>{
-    console.log('signin with google successfull')
+    console.log('signin with google successfull');
+    this.props.history.push('/');
   })
   .catch(error =>{
     console.log(error);
@@ -78,10 +79,12 @@ signinWithGoogle = () =>{
 signinWithFacebook = () =>{
   auth.doSignInFacebook()
   .then(authUser=>{
-    console.log('signin with facebook successfull')
+    this.props.history.push('/');
+    console.log('signin with facebook successfull');
   })
   .catch(error =>{
     console.log(error);
+
   });
 }
   render(){
@@ -99,8 +102,8 @@ signinWithFacebook = () =>{
 
         <div className="login-box">
             <h1>Login</h1>
-            <button onClick={this.signinWithGoogle}>Sign in with google</button>
-            <button onClick={this.signinWithFacebook}>Sign in with facebook</button>
+            <button className="loginBtn loginBtn--google" onClick={this.signinWithGoogle}>Sign in with Google</button>
+            <button className="loginBtn loginBtn--facebook" onClick={this.signinWithFacebook}>Sign in with Facebook</button>
           <form onSubmit = {this.handleSubmit}>
             <TextField
                floatingLabelText="Enter your email"
