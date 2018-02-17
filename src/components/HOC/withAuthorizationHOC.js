@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {withRouter} from 'react-router-dom';
+import {withRouter, Redirect} from 'react-router-dom';
 import { firebase } from '../../firebase';
 import LoadingContainer from '../common-components/loading-container';
 
@@ -16,6 +16,10 @@ const withAuthorization = (authCondition) => (Component) => {
       firebase.auth.onAuthStateChanged((authUser) => {
         if (!authCondition(authUser)) {
           this.props.history.push('/login');
+          // <Redirect to={ {
+          //      pathname: '/login',
+          //      // state: {from: renderProps.location}
+          //    } } />
         }
       });
     }

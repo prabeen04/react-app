@@ -28,12 +28,13 @@ class Login extends React.Component{
     console.log(props);
     this.state = {...INITIAL_STATE};
     this.handleSubmit  = this.handleSubmit.bind(this);
+    this.signinWithGoogle = this.signinWithGoogle.bind(this);
   }
 componentWillMount(){
   if(this.props.authUser){
     console.log('inside login will mount')
     return (<Redirect to={{
-        pathname: '/about',
+        pathname: '/',
         state: {
           message: 'you are already logged in'
         }
@@ -45,13 +46,15 @@ componentWillMount(){
 
 }
 handleSubmit = (event) => {
+  console.log(this.props.location);
+   const { from } = this.props.location.state || { from: { pathname: '/' } }
   console.log(event);
   event.preventDefault();
     auth.doSignInWithEmailAndPassword(this.state.email, this.state.password)
   .then(authUser => {
     console.log(authUser);
     console.log(this.props);
-    this.props.history.push('/about')
+    this.props.history.push(from)
   })
   .catch(error => {
     console.log(error);
@@ -60,6 +63,15 @@ handleSubmit = (event) => {
     })
   });
 
+}
+signinWithGoogle = () =>{
+  auth.doSignInPopup()
+  .then(authUser=>{
+    console.log('signin with google successfull')
+  })
+  .catch(error =>{
+    console.log(error);
+  });
 }
   render(){
     const {
@@ -76,6 +88,7 @@ handleSubmit = (event) => {
 
         <div className="login-box">
             <h1>Login</h1>
+            <button onClick={this.signinWithGoogle}>Sign in with google</button>
           <form onSubmit = {this.handleSubmit}>
             <TextField
                floatingLabelText="Enter your email"

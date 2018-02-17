@@ -1,8 +1,9 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
-import NewsSearch from './news-search';
-import  LoadingContainer from '../common-components/loading-container';
+import withAuthorization from '../HOC/withAuthorizationHOC';
 
+import NewsSearch from './news-search';
+import LoadingContainer from '../common-components/loading-container';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
 
@@ -27,7 +28,6 @@ fetchNews = ()=>{
     });
   }
   componentDidMount(){
-    console.log('inside componentDidMount')
     if(this.state.news_id){
       this.fetchNews();
     }else{
@@ -75,4 +75,5 @@ fetchNews = ()=>{
   }
 }
 
-export default NewsDetail;
+const authCondition = (authUser) => !!authUser;
+export default withAuthorization(authCondition)(NewsDetail);

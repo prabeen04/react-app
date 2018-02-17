@@ -12,7 +12,7 @@ import * as firebase from 'firebase';
       firebase.initializeApp(config);
   }
 const auth = firebase.auth();
-
+ const provider = new firebase.auth.GoogleAuthProvider();
 export {
-  auth,
+  auth,provider,
 };
