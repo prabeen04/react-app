@@ -20,7 +20,7 @@ import Signup from './components/container/signup';
 import NotFound from './components/container/notfound';
 
 import './App.css';
-
+import 'react-big-calendar/lib/css/react-big-calendar.css';
 class App extends Component {
   constructor(props, context) {
     super(props, context);
