@@ -2,6 +2,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import withAuthorization from '../../HOC/withAuthorizationHOC';
 import LineChart from '../../utility/chart-js/line-chart';
+import PieChart from '../../utility/chart-js/pie-chart';
 import Paper from 'material-ui/Paper';
 import {Tabs, Tab} from 'material-ui/Tabs';
 import FontIcon from 'material-ui/FontIcon';
@@ -36,10 +37,7 @@ class About extends React.Component{
         <Tab style={{backgroundColor: '#555'}} icon={<FontIcon className = "material-icons" > favorite</FontIcon>} label="FAVORITES" value="b">
           <div className="flex-container">
             <Paper zDepth={3} className="tab-paper flex-container">
-            <div>
-              <h1>Favourite Section</h1>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed in totam nostrum facere exercitationem doloremque. Ducimus in facere quaerat praesentium!</p>
-            </div>
+              <PieChart />
             </Paper>
           </div>
         </Tab>

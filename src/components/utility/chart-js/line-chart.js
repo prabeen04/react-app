@@ -30,7 +30,7 @@ const data = {
 const LineChart = (props) => {
     return(
         <div>
-            <Line data={data}/>
+            <Line data={data} width={600} height={400}/>
         </div>
     );
 } 
