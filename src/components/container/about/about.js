@@ -1,6 +1,7 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import withAuthorization from '../../HOC/withAuthorizationHOC';
+import SimpleTable from '../../common-components/table/simple-table';
 import LineChart from '../../utility/chart-js/line-chart';
 import PieChart from '../../utility/chart-js/pie-chart';
 import BubbleChart from '../../utility/chart-js/bubble-chart';
@@ -48,6 +49,8 @@ class About extends React.Component{
         </Tab>
       </Tabs>
       <br/>
+      <h1>Material Table</h1>
+      <SimpleTable />
       </div>
     );
   }

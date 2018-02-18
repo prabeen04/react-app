@@ -104,10 +104,7 @@ const EventCalendar = (props) => {
         startAccessor='startDate'
         endAccessor='endDate'
         selectable='true'
-        onSelecting={(range) => {
-            console.log(range);
-            return true;
-        }}/>
+        />
     );
 }
 
