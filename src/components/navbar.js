@@ -13,6 +13,7 @@ import Forum from 'material-ui/svg-icons/communication/forum';
 import AccountCircle from 'material-ui/svg-icons/action/account-circle';
 import Divider from 'material-ui/Divider';
 import QuestionAnswer from 'material-ui/svg-icons/action/question-answer';
+import EventNotes from 'material-ui/svg-icons/notification/event-note';
 import Download from 'material-ui/svg-icons/file/file-download';
 import Theaters from 'material-ui/svg-icons/action/theaters';
 import Input from 'material-ui/svg-icons/action/input';
@@ -95,6 +96,9 @@ class Navbar extends Component {
                     </Link>
                     <Link to="/gallary" onClick={this.handleToggle}>
                       <MenuItem primaryText="Gallary" leftIcon={<Theaters />} />
+                    </Link>
+                    <Link to="/planner" onClick={this.handleToggle}>
+                      <MenuItem primaryText="Planner" leftIcon={<EventNotes />} />
                     </Link>
                       <MenuItem
                          primaryText="SignOut"

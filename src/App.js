@@ -14,6 +14,7 @@ import NewsDetail from './components/container/news-detail';
 import Chat from './components/container/chat';
 import Profile from './components/container/profile';
 import Gallary from './components/container/gallary';
+import Planner from './components/container/planner/planner';
 import Login from './components/container/login';
 import Signup from './components/container/signup';
 import NotFound from './components/container/notfound';
@@ -44,6 +45,7 @@ class App extends Component {
             <Route exact path="/profile" component={Profile}/>
             <Route exact path="/chat" render={(props) =><Chat {...props} />}/>
             <Route exact path="/gallary" render={(props) =><Gallary {...props} />}/>
+            <Route exact path="/planner" render={(props) =><Planner {...props} />}/>
             <Route exact path="/login" render={(props) =><Login {...props} />}/>
             <Route exact path="/signup" component={Signup}/>
             <Route path="*" component={NotFound}/>

@@ -23,7 +23,7 @@ const data ={
         pointHoverBorderWidth: 2,
         pointRadius: 1,
         pointHitRadius: 10,
-        data: [{x:10,y:20,r:5},{x:20,y:80,r:15},{x:-10,y:120,r:25},{x:50,y:30,r:80}]
+        data: [{x:10,y:20,r:5},{x:20,y:80,r:15},{x:-10,y:20,r:25},{x:50,y:30,r:80}]
       }
     ]
   };
