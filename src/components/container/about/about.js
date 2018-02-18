@@ -1,7 +1,7 @@
 import React from 'react';
 import { Redirect } from 'react-router-dom';
 import withAuthorization from '../../HOC/withAuthorizationHOC';
-
+import LineChart from '../../utility/chart-js/line-chart';
 import Paper from 'material-ui/Paper';
 import {Tabs, Tab} from 'material-ui/Tabs';
 import FontIcon from 'material-ui/FontIcon';
@@ -46,10 +46,7 @@ class About extends React.Component{
         <Tab style={{backgroundColor: '#444'}} icon={<MapsPersonPin />} label="NEARBY" value="c">
           <div className="flex-container">
           <Paper zDepth={3} className="tab-paper flex-container">
-          <div>
-              <h1>Location Section</h1>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed in totam nostrum facere exercitationem doloremque. Ducimus in facere quaerat praesentium!</p>
-            </div>
+            <LineChart />
           </Paper>
           </div>
         </Tab>
