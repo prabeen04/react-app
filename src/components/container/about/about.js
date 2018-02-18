@@ -2,6 +2,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import withAuthorization from '../../HOC/withAuthorizationHOC';
 import SimpleTable from '../../common-components/table/simple-table';
+import HorizontalLinearStepper from '../../common-components/stepper/horizontal-linear-stepper';
 import LineChart from '../../utility/chart-js/line-chart';
 import PieChart from '../../utility/chart-js/pie-chart';
 import BubbleChart from '../../utility/chart-js/bubble-chart';
@@ -51,6 +52,8 @@ class About extends React.Component{
       <br/>
       <h1>Material Table</h1>
       <SimpleTable />
+      <h1>Horizontal Linear Stepper</h1>
+      <HorizontalLinearStepper />
       </div>
     );
   }

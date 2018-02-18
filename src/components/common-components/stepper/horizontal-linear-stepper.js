@@ -103,4 +103,3 @@ class HorizontalLinearStepper extends React.Component {
 }
 
 export default HorizontalLinearStepper;
-Horizon
