@@ -7,8 +7,8 @@ class Planner extends React.Component {
     }
     render() {
         return (
-        <div>
-            <h1>Planner Component</h1>
+        <div style={{ width: '100vw', height: '100vh',margin: '1rem', overflow: 'hidden'}}>
+            {/* <h1>Schedule your Events</h1> */}
             <EventCalendar />
         </div>
 
