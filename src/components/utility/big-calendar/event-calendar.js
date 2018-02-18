@@ -102,7 +102,12 @@ const EventCalendar = (props) => {
         <BigCalendar
         events={myEventsList}
         startAccessor='startDate'
-        endAccessor='endDate'/>
+        endAccessor='endDate'
+        selectable='true'
+        onSelecting={(range) => {
+            console.log(range);
+            return true;
+        }}/>
     );
 }
 
