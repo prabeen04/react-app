@@ -26,21 +26,30 @@ class About extends React.Component{
         <Tab style={{backgroundColor: '#444'}} icon={<FontIcon className = "material-icons" > phone</FontIcon>} label="RECENTS" value="a">
           <div className="flex-container">
             <Paper zDepth={3} className="tab-paper flex-container">
-              <h1>Phone section</h1>
+              <div>
+                <h1>Phone Section</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed in totam nostrum facere exercitationem doloremque. Ducimus in facere quaerat praesentium!</p>
+              </div>
             </Paper>
           </div>
         </Tab>
         <Tab style={{backgroundColor: '#555'}} icon={<FontIcon className = "material-icons" > favorite</FontIcon>} label="FAVORITES" value="b">
           <div className="flex-container">
             <Paper zDepth={3} className="tab-paper flex-container">
-              <h1>Favourite section</h1>
+            <div>
+              <h1>Favourite Section</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed in totam nostrum facere exercitationem doloremque. Ducimus in facere quaerat praesentium!</p>
+            </div>
             </Paper>
           </div>
         </Tab>
         <Tab style={{backgroundColor: '#444'}} icon={<MapsPersonPin />} label="NEARBY" value="c">
           <div className="flex-container">
           <Paper zDepth={3} className="tab-paper flex-container">
-            <h1>Maps section</h1>
+          <div>
+              <h1>Location Section</h1>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed in totam nostrum facere exercitationem doloremque. Ducimus in facere quaerat praesentium!</p>
+            </div>
           </Paper>
           </div>
         </Tab>
