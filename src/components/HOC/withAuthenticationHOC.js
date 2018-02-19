@@ -31,11 +31,11 @@ const withAuthentication = (Component) =>{
           }
         });
     }
+    
     componentWillUnmount() {
-
       this.authListener();
-
     }
+
     render(){
       return !this.state.loading ? <Component/> : <LoadingContainer />
     }
