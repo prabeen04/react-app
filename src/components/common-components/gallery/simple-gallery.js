@@ -15,7 +15,7 @@ const IMAGES =
 [{
         src: Image,
         thumbnail:Image,
-        thumbnailWidth: 320,
+        thumbnailWidth: 420,
         thumbnailHeight: 174,
         isSelected: true,
         caption: "After Rain (Jeshu John - designerspics.com)"
@@ -23,7 +23,7 @@ const IMAGES =
 {
         src: ResponsiveImage,
         thumbnail: ResponsiveImage,
-        thumbnailWidth: 320,
+        thumbnailWidth: 420,
         thumbnailHeight: 212,
         tags: [{value: "Ocean", title: "Ocean"}, {value: "People", title: "People"}],
         caption: "Boats (Jeshu John - designerspics.com)"
@@ -31,7 +31,7 @@ const IMAGES =
 {
         src: IphoneImage,
         thumbnail: IphoneImage,
-        thumbnailWidth: 320,
+        thumbnailWidth: 420,
         thumbnailHeight: 212,
         tags: [{value: "Ocean", title: "Ocean"}, {value: "People", title: "People"}],
         caption: "Boats (Jeshu John - designerspics.com)"
@@ -39,7 +39,7 @@ const IMAGES =
 {
         src: AbstractImage,
         thumbnail: AbstractImage,
-        thumbnailWidth: 320,
+        thumbnailWidth: 420,
         thumbnailHeight: 212,
         tags: [{value: "Ocean", title: "Ocean"}, {value: "People", title: "People"}],
         caption: "Boats (Jeshu John - designerspics.com)"
@@ -47,7 +47,7 @@ const IMAGES =
 {
         src: GoogleImage,
         thumbnail: GoogleImage,
-        thumbnailWidth: 320,
+        thumbnailWidth: 420,
         thumbnailHeight: 212,
         tags: [{value: "Ocean", title: "Ocean"}, {value: "People", title: "People"}],
         caption: "Boats (Jeshu John - designerspics.com)"
@@ -55,7 +55,7 @@ const IMAGES =
 {
         src: PlanetImage,
         thumbnail: PlanetImage,
-        thumbnailWidth: 320,
+        thumbnailWidth: 420,
         thumbnailHeight: 212,
         tags: [{value: "Ocean", title: "Ocean"}, {value: "People", title: "People"}],
         caption: "Boats (Jeshu John - designerspics.com)"
@@ -63,7 +63,7 @@ const IMAGES =
 {
         src: RobotImage,
         thumbnail: RobotImage,
-        thumbnailWidth: 320,
+        thumbnailWidth: 420,
         thumbnailHeight: 212,
         tags: [{value: "Ocean", title: "Ocean"}, {value: "People", title: "People"}],
         caption: "Boats (Jeshu John - designerspics.com)"
@@ -71,7 +71,7 @@ const IMAGES =
 {
         src: MacbookImage,
         thumbnail: MacbookImage,
-        thumbnailWidth: 320,
+        thumbnailWidth: 420,
         thumbnailHeight: 212
 }];
 
