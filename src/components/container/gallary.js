@@ -13,64 +13,64 @@ import SunsetImage from '../../assets/images/sunset.jpeg';
 
 const IMAGES =
 [{
-        src: Image,
-        thumbnail:Image,
+        src: 'http://lorempixel.com/600/500',
+        thumbnail:'http://lorempixel.com/600/500',
         thumbnailWidth: 320,
         thumbnailHeight: 174,
         isSelected: true,
         caption: "After Rain (Jeshu John - designerspics.com)"
 },
+// {
+//         src: ResponsiveImage,
+//         thumbnail: ResponsiveImage,
+//         thumbnailWidth: 320,
+//         thumbnailHeight: 212,
+//         tags: [{value: "Ocean", title: "Ocean"}, {value: "People", title: "People"}],
+//         caption: "Boats (Jeshu John - designerspics.com)"
+// },
+// {
+//         src: IphoneImage,
+//         thumbnail: IphoneImage,
+//         thumbnailWidth: 320,
+//         thumbnailHeight: 212,
+//         tags: [{value: "Ocean", title: "Ocean"}, {value: "People", title: "People"}],
+//         caption: "Boats (Jeshu John - designerspics.com)"
+// },
+// {
+//         src: AbstractImage,
+//         thumbnail: AbstractImage,
+//         thumbnailWidth: 320,
+//         thumbnailHeight: 212,
+//         tags: [{value: "Ocean", title: "Ocean"}, {value: "People", title: "People"}],
+//         caption: "Boats (Jeshu John - designerspics.com)"
+// },
+// {
+//         src: GoogleImage,
+//         thumbnail: GoogleImage,
+//         thumbnailWidth: 320,
+//         thumbnailHeight: 212,
+//         tags: [{value: "Ocean", title: "Ocean"}, {value: "People", title: "People"}],
+//         caption: "Boats (Jeshu John - designerspics.com)"
+// },
+// {
+//         src: PlanetImage,
+//         thumbnail: PlanetImage,
+//         thumbnailWidth: 320,
+//         thumbnailHeight: 212,
+//         tags: [{value: "Ocean", title: "Ocean"}, {value: "People", title: "People"}],
+//         caption: "Boats (Jeshu John - designerspics.com)"
+// },
+// {
+//         src: RobotImage,
+//         thumbnail: RobotImage,
+//         thumbnailWidth: 320,
+//         thumbnailHeight: 212,
+//         tags: [{value: "Ocean", title: "Ocean"}, {value: "People", title: "People"}],
+//         caption: "Boats (Jeshu John - designerspics.com)"
+// },
 {
-        src: ResponsiveImage,
-        thumbnail: ResponsiveImage,
-        thumbnailWidth: 320,
-        thumbnailHeight: 212,
-        tags: [{value: "Ocean", title: "Ocean"}, {value: "People", title: "People"}],
-        caption: "Boats (Jeshu John - designerspics.com)"
-},
-{
-        src: IphoneImage,
-        thumbnail: IphoneImage,
-        thumbnailWidth: 320,
-        thumbnailHeight: 212,
-        tags: [{value: "Ocean", title: "Ocean"}, {value: "People", title: "People"}],
-        caption: "Boats (Jeshu John - designerspics.com)"
-},
-{
-        src: AbstractImage,
-        thumbnail: AbstractImage,
-        thumbnailWidth: 320,
-        thumbnailHeight: 212,
-        tags: [{value: "Ocean", title: "Ocean"}, {value: "People", title: "People"}],
-        caption: "Boats (Jeshu John - designerspics.com)"
-},
-{
-        src: GoogleImage,
-        thumbnail: GoogleImage,
-        thumbnailWidth: 320,
-        thumbnailHeight: 212,
-        tags: [{value: "Ocean", title: "Ocean"}, {value: "People", title: "People"}],
-        caption: "Boats (Jeshu John - designerspics.com)"
-},
-{
-        src: PlanetImage,
-        thumbnail: PlanetImage,
-        thumbnailWidth: 320,
-        thumbnailHeight: 212,
-        tags: [{value: "Ocean", title: "Ocean"}, {value: "People", title: "People"}],
-        caption: "Boats (Jeshu John - designerspics.com)"
-},
-{
-        src: RobotImage,
-        thumbnail: RobotImage,
-        thumbnailWidth: 320,
-        thumbnailHeight: 212,
-        tags: [{value: "Ocean", title: "Ocean"}, {value: "People", title: "People"}],
-        caption: "Boats (Jeshu John - designerspics.com)"
-},
-{
-        src: MacbookImage,
-        thumbnail: MacbookImage,
+        src: 'http://lorempixel.com/600/501',
+        thumbnail: 'http://lorempixel.com/600/501',
         thumbnailWidth: 320,
         thumbnailHeight: 212
 }];
