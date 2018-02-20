@@ -3,6 +3,8 @@ import NewsButton from './news-button';
 import withAuthorization from '../HOC/withAuthorizationHOC';
 import {Route, Redirect} from 'react-router-dom';
 import LoadingContainer from '../common-components/loading-container';
+import Nprogress from 'nprogress';
+import 'nprogress/nprogress.css';
 
 class Feed extends React.Component {
   constructor(props) {
@@ -11,7 +13,7 @@ class Feed extends React.Component {
       news: []
     }
     this.navigate = this.navigate.bind(this);
-  }
+    }
   navigate(param) {
     console.log(param);
     this.props.history.push({
@@ -23,10 +25,12 @@ class Feed extends React.Component {
     });
   }
   componentDidMount() {
+    Nprogress.start();
     fetch('https://newsapi.org/v1/sources').then(res => res.json()).then(data => {
       console.log(data.sources);
 
       this.setState({news: data.sources});
+      Nprogress.done();
     }).catch((err) => {
       console.log(err);
     });
