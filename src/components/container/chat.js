@@ -1,16 +1,16 @@
 import React from 'react';
-import nprogress from 'nprogress';
+import Nprogress from 'nprogress';
 import 'nprogress/nprogress.css';
 
 class Chat extends React.Component{
   constructor(props){
     super(props)
-    nprogress.start();
+    Nprogress.start();
   }
   componentDidMount(){
     setTimeout(()=>{
       console.log('its done')
-      nprogress.done();
+      // Nprogress.done();
     },2000)
   }
   render(){

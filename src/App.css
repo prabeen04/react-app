@@ -185,8 +185,9 @@ a{
   text-decoration: none;
 }
 .navbar{
-  z-index: 9999;
+  z-index: 1000;
   background: #12153c !important;
+  position: inherit !important;
 }
 .about{
   display: flex;
