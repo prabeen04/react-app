@@ -24,6 +24,7 @@ fetchNews = ()=>{
     .then(data => {
       this.setState({articles: data.articles, loading_state: false});
     }).catch((err) => {
+      this.setState({articles: [], loading_state: false});
       console.log(err);
     });
   }

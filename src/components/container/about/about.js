@@ -26,22 +26,22 @@ class About extends React.Component{
   render(){
     return (
       <div>
-      <Tabs value={this.state.value} onChange={this.handleChange}>
-        <Tab style={{backgroundColor: '#444'}} icon={<FontIcon className = "material-icons" > phone</FontIcon>} label="RECENTS" value="a">
+      <Tabs value={this.state.value} onChange={this.handleChange} inkBarStyle={{background: 'tomato'}}>
+        <Tab style={{backgroundColor: '#555'}} icon={<FontIcon className = "material-icons" > phone</FontIcon>} label="RECENTS" value="a">
           <div className="flex-container">
             <Paper zDepth={3} className="tab-paper flex-container">
               <BubbleChart />
             </Paper>
           </div>
         </Tab>
-        <Tab style={{backgroundColor: '#555'}} icon={<FontIcon className = "material-icons" > favorite</FontIcon>} label="FAVORITES" value="b">
+        <Tab style={{backgroundColor: '#666'}} icon={<FontIcon className = "material-icons" > favorite</FontIcon>} label="FAVORITES" value="b">
           <div className="flex-container">
             <Paper zDepth={3} className="tab-paper flex-container">
               <PieChart />
             </Paper>
           </div>
         </Tab>
-        <Tab style={{backgroundColor: '#444'}} icon={<MapsPersonPin />} label="NEARBY" value="c">
+        <Tab style={{backgroundColor: '#555'}} icon={<MapsPersonPin />} label="NEARBY" value="c">
           <div className="flex-container">
           <Paper zDepth={3} className="tab-paper flex-container">
             <LineChart />
