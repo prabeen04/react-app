@@ -27,7 +27,7 @@ class About extends React.Component{
     return (
       <div>
       <Tabs value={this.state.value} onChange={this.handleChange} inkBarStyle={{background: 'tomato'}}>
-        <Tab style={{backgroundColor: '#555'}} icon={<FontIcon className = "material-icons" > phone</FontIcon>} label="RECENTS" value="a">
+        <Tab style={{backgroundColor: '#555', selectedBackgroundColor: 'red'}} icon={<FontIcon className = "material-icons" > phone</FontIcon>} label="RECENTS" value="a">
           <div className="flex-container">
             <Paper zDepth={3} className="tab-paper flex-container">
               <BubbleChart />
