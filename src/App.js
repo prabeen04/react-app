@@ -1,8 +1,8 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
-import {firebase} from './firebase';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { firebase } from './firebase';
 import withAuthentication from './components/HOC/withAuthenticationHOC';
 
 import LoadingContainer from './components/common-components/loading-container';
@@ -33,26 +33,26 @@ class App extends Component {
   render() {
     return (
       <MuiThemeProvider>
-      <Router basename={process.env.PUBLIC_URL}>
-        <div>
-          <Navbar/>
-          <Switch>
-            <Route exact path="/" component={Home}/>
-            <Route exact path="/react-app" component={Home}/>
-            <Route exact path="/about" render={(props) =><About {...props} />}/>
-            <Route exact path="/feed" render={(props) =><Feed {...props} />}/>
-            <Route exact path="/news-detail" component={NewsDetail}/>
-            <Route exact path="/profile" component={Profile}/>
-            <Route exact path="/chat" render={(props) =><Chat {...props} />}/>
-            <Route exact path="/gallary" render={(props) =><Gallary {...props} />}/>
-            <Route exact path="/planner" render={(props) =><Planner {...props} />}/>
-            <Route exact path="/login" render={(props) =><Login {...props} />}/>
-            <Route exact path="/signup" component={Signup}/>
-            <Route path="*" component={NotFound}/>
-          </Switch>
-        </div>
-      </Router>
-    </MuiThemeProvider>);
+        <Router basename={process.env.PUBLIC_URL}>
+          <div>
+            <Navbar />
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/react-app" component={Home} />
+              <Route exact path="/about" render={(props) => <About {...props} />} />
+              <Route exact path="/feed" render={(props) => <Feed {...props} />} />
+              <Route exact path="/news-detail" component={NewsDetail} />
+              <Route exact path="/profile" component={Profile} />
+              <Route exact path="/chat" render={(props) => <Chat {...props} />} />
+              <Route exact path="/gallary" render={(props) => <Gallary {...props} />} />
+              <Route exact path="/planner" render={(props) => <Planner {...props} />} />
+              <Route exact path="/login" render={(props) => <Login {...props} />} />
+              <Route exact path="/signup" component={Signup} />
+              <Route path="*" component={NotFound} />
+            </Switch>
+          </div>
+        </Router>
+      </MuiThemeProvider>);
   }
 
 }
