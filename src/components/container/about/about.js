@@ -23,6 +23,9 @@ class About extends React.Component{
   handleChange = (value) => {
     this.setState({value: value});
   };
+  componentDidMount(){
+
+  }
   render(){
     return (
       <div>

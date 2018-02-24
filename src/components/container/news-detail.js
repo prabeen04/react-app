@@ -1,5 +1,5 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import withAuthorization from '../HOC/withAuthorizationHOC';
 
 import NewsSearch from './news-search';
@@ -63,7 +63,7 @@ fetchNews = ()=>{
                         <CardTitle title={article.title} subtitle={article.publishedAt} />
                         <CardText>{article.description}</CardText>
                         <CardActions>
-                          <RaisedButton primary={true} label="View Full News" />
+                         <Link to={article.url} target="_blank"><RaisedButton primary={true} label="View Full News" /></Link>
                           <RaisedButton primary={true} label="Visit SIte" />
                         </CardActions>
                       </Card>
