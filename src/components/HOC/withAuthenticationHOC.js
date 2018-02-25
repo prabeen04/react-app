@@ -2,6 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types'
 import {firebase} from '../../firebase';
 import LoadingContainer from '../common-components/loading-container';
+import Nprogress from 'nprogress';
+import 'nprogress/nprogress.css';
 
 const withAuthentication = (Component) =>{
   class WithAuthentication extends React.Component{
@@ -11,6 +13,7 @@ const withAuthentication = (Component) =>{
           authUser: localStorage.getItem('user') || null,
           loading: true
         }
+        Nprogress.start();
     };
     getChildContext(){
       return{
@@ -30,6 +33,7 @@ const withAuthentication = (Component) =>{
             localStorage.removeItem('user', 1);
           }
         });
+        Nprogress.done();
     }
     
     componentWillUnmount() {

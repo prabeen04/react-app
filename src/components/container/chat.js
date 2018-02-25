@@ -10,7 +10,7 @@ class Chat extends React.Component{
   componentDidMount(){
     setTimeout(()=>{
       console.log('its done')
-      // Nprogress.done();
+      Nprogress.done();
     },2000)
   }
   render(){

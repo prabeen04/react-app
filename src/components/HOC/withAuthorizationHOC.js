@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import {withRouter, Redirect} from 'react-router-dom';
 import { firebase } from '../../firebase';
 import LoadingContainer from '../common-components/loading-container';
+import Nprogress from 'nprogress';
+import 'nprogress/nprogress.css';
 
 const withAuthorization = (authCondition) => (Component) => {
   console.log('inside withAuthorization...');
@@ -10,6 +12,7 @@ const withAuthorization = (authCondition) => (Component) => {
     constructor(props, context){
         super(props, context);
         console.log(context);
+        Nprogress.start();
       }
 
     componentDidMount() {
@@ -22,6 +25,7 @@ const withAuthorization = (authCondition) => (Component) => {
           //    } } />
         }
       });
+      Nprogress.done();
     }
     render() {
       return this.context.authUser ? <Component {...this.props}/> : <LoadingContainer />;

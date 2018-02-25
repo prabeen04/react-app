@@ -6,6 +6,8 @@ import NewsSearch from './news-search';
 import LoadingContainer from '../common-components/loading-container';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import RaisedButton from 'material-ui/RaisedButton';
+import Nprogress from 'nprogress';
+import 'nprogress/nprogress.css';
 
 class NewsDetail extends React.Component{
   constructor(props){
@@ -19,10 +21,12 @@ class NewsDetail extends React.Component{
     this.fetchNews  = this.fetchNews.bind(this);
   }
 fetchNews = ()=>{
+  Nprogress.start();
     fetch(`https://newsapi.org/v1/articles?source=${this.state.news_id}&sortBy=top&apiKey=d1cfbf5cf1e74757a5fad5cc65fd17eb`)
     .then(res => res.json())
     .then(data => {
       this.setState({articles: data.articles, loading_state: false});
+      Nprogress.done();
     }).catch((err) => {
       this.setState({articles: [], loading_state: false});
       console.log(err);
@@ -36,6 +40,7 @@ fetchNews = ()=>{
           pathname: '/feed'
         });
     }
+  
   }
   changeNews = (news_id) =>{
     this.setState({news_id: news_id, loading_state: true}, function(){
