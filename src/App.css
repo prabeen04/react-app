@@ -185,7 +185,7 @@ a{
   text-decoration: none;
 }
 .navbar{
-  z-index: 5000;
+  z-index: 100 !important;
   background: #12153c !important;
 }
 .about{
