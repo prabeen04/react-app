@@ -7,13 +7,13 @@ import LineChart from '../../utility/chart-js/line-chart';
 import PieChart from '../../utility/chart-js/pie-chart';
 import BubbleChart from '../../utility/chart-js/bubble-chart';
 import Paper from 'material-ui/Paper';
-import {Tabs, Tab} from 'material-ui/Tabs';
+import { Tabs, Tab } from 'material-ui/Tabs';
 import FontIcon from 'material-ui/FontIcon';
 import MapsPersonPin from 'material-ui/svg-icons/maps/person-pin';
 
 
-class About extends React.Component{
-  constructor(props){
+class About extends React.Component {
+  constructor(props) {
     super(props);
     this.state = {
       value: 'a',
@@ -21,42 +21,48 @@ class About extends React.Component{
     };
   }
   handleChange = (value) => {
-    this.setState({value: value});
+    this.setState({ value: value });
   };
-  componentDidMount(){
+  componentDidMount() {
 
   }
-  render(){
+  render() {
     return (
       <div>
-      <Tabs value={this.state.value} onChange={this.handleChange} inkBarStyle={{background: 'tomato'}}>
-        <Tab style={{backgroundColor: '#555', selectedBackgroundColor: 'red'}} icon={<FontIcon className = "material-icons" > phone</FontIcon>} label="RECENTS" value="a">
-          <div className="flex-container">
-            <Paper zDepth={3} className="tab-paper flex-container">
-              <BubbleChart />
-            </Paper>
-          </div>
-        </Tab>
-        <Tab style={{backgroundColor: '#666'}} icon={<FontIcon className = "material-icons" > favorite</FontIcon>} label="FAVORITES" value="b">
-          <div className="flex-container">
-            <Paper zDepth={3} className="tab-paper flex-container">
-              <PieChart />
-            </Paper>
-          </div>
-        </Tab>
-        <Tab style={{backgroundColor: '#555'}} icon={<MapsPersonPin />} label="NEARBY" value="c">
-          <div className="flex-container">
+        <Tabs value={this.state.value} onChange={this.handleChange} inkBarStyle={{ background: 'tomato' }}>
+          <Tab style={{ backgroundColor: '#555', selectedBackgroundColor: 'red' }} icon={<FontIcon className="material-icons" > phone</FontIcon>} label="RECENTS" value="a">
+            <div className="flex-container">
+              <h1>Material Table</h1>
+              <SimpleTable />
+            </div>
+          </Tab>
+          <Tab style={{ backgroundColor: '#666' }} icon={<FontIcon className="material-icons" > favorite</FontIcon>} label="FAVORITES" value="b">
+            <div className="flex-container">
+              <h1>Horizontal Linear Stepper</h1>
+              <HorizontalLinearStepper />
+            </div>
+          </Tab>
+          <Tab style={{ backgroundColor: '#555' }} icon={<MapsPersonPin />} label="NEARBY" value="c">
+            <div className="flex-container">
+
+            </div>
+          </Tab>
+        </Tabs>
+        <br />
+        <div className="flex-container">
+        <PieChart /> <BubbleChart /><LineChart />
+          {/* <Paper zDepth={3} className="tab-paper flex-container">
+            <PieChart />
+          </Paper>
+          <Paper zDepth={3} className="tab-paper flex-container">
+            <BubbleChart />
+          </Paper>
           <Paper zDepth={3} className="tab-paper flex-container">
             <LineChart />
-          </Paper>
-          </div>
-        </Tab>
-      </Tabs>
-      <br/>
-      <h1>Material Table</h1>
-      <SimpleTable />
-      <h1>Horizontal Linear Stepper</h1>
-      <HorizontalLinearStepper />
+          </Paper> */}
+        </div>
+
+
       </div>
     );
   }
