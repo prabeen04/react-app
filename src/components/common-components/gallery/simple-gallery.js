@@ -75,13 +75,6 @@ const IMAGES =
         thumbnailHeight: 212
 }];
 
-class SimpleGallery extends React.Component{
-  render(){
-    return(
-        <Gallery images={IMAGES}/>
-    );
-  }
-
-}
+const SimpleGallery = (props) => <Gallery images={IMAGES}/>
 
 export default SimpleGallery;

@@ -29,7 +29,9 @@ const data ={
   };
  const BubbleChart = (props) => {
     return(
-        <Bubble data={data} height={100} />
+      <div style={{height: '400px', width: '600px'}}>
+        <Bubble data={data}/>
+      </div>
     );
  }
 

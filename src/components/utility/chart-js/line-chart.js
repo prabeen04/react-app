@@ -29,7 +29,7 @@ const data = {
   };
 const LineChart = (props) => {
     return(
-        <div>
+        <div style={{height: '400px', wight: '600px'}} >
             <Line data={data} width={600} height={400}/>
         </div>
     );

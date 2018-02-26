@@ -9,20 +9,23 @@ const data = {
 	datasets: [{
 		data: [300, 50, 100],
 		backgroundColor: [
-		'#d88af7',
-		'#efbf81',
-		'#8af282'
+			'#d88af7',
+			'#efbf81',
+			'#8af282'
 		],
 		hoverBackgroundColor: [
-		'#b95cdb',
-		'#d19f60',
-		'#72e26a'
+			'#b95cdb',
+			'#d19f60',
+			'#72e26a'
 		]
 	}]
 };
 const PieChart = (props) => {
-    return(
-        <Pie data={data} height={100} />
-    );
+	return (
+		<div style={{ height: '400px', width: '600px' }}>
+			<Pie data={data} />
+		</div>
+
+	);
 }
 export default PieChart;

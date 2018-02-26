@@ -32,33 +32,31 @@ class About extends React.Component {
         <Tabs value={this.state.value} onChange={this.handleChange} inkBarStyle={{ background: 'tomato' }}>
           <Tab style={{ backgroundColor: '#555', selectedBackgroundColor: 'red' }} icon={<FontIcon className="material-icons" > phone</FontIcon>} label="RECENTS" value="a">
             <div className="flex-container">
-              <h1>Material Table</h1>
-              <SimpleTable />
+              <PieChart />
             </div>
           </Tab>
           <Tab style={{ backgroundColor: '#666' }} icon={<FontIcon className="material-icons" > favorite</FontIcon>} label="FAVORITES" value="b">
             <div className="flex-container">
-              <h1>Horizontal Linear Stepper</h1>
-              <HorizontalLinearStepper />
+              <BubbleChart />
             </div>
           </Tab>
           <Tab style={{ backgroundColor: '#555' }} icon={<MapsPersonPin />} label="NEARBY" value="c">
             <div className="flex-container">
-
+              <LineChart />
             </div>
           </Tab>
         </Tabs>
         <br />
-        <div className="flex-container" style={{flexDirection: 'row'}}>
-      
-            <PieChart />
-      
-            <BubbleChart />
-      
-            <LineChart />
+        
+        <div className="flex-container" style={{padding: '2rem', backgroundColor: '#f4f4f4', flexDirection: 'column'}} >
+        <h3>Multistep Form</h3>
+          <HorizontalLinearStepper />
         </div>
-
-
+          <br/>
+        <div className="flex-container">
+          <h1>Material Table</h1>
+          <SimpleTable />
+        </div>
       </div>
     );
   }
