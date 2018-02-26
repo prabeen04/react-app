@@ -30,23 +30,12 @@ const styles = {
     width: '400px'
   }
 }
-class Home extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      heading: 'Bussiness'
-    };
-  }
-
-
-  componentDidMount(){
-
-  }
-  render() {
+const Home  = (props) => {
+ 
     return (<div>
       <Paper style={styles} zDepth={3} className="about-paper">
         <div className=" flex-container">
-          <h1 className="landing-heading">Face of your {this.state.heading}</h1>
+          <h1 className="landing-heading">Face of your BUSSINESS</h1>
         </div>
         <div className=" flex-container">
           <p className="landing-text">I strive for two things in design: simplicity and clarity. Great design is born of those two things</p>
@@ -128,6 +117,5 @@ class Home extends React.Component {
       </div>
     </div>);
   }
-}
 
 export default Home;
