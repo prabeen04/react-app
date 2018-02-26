@@ -49,17 +49,13 @@ class About extends React.Component {
           </Tab>
         </Tabs>
         <br />
-        <div className="flex-container">
-        <PieChart /> <BubbleChart /><LineChart />
-          {/* <Paper zDepth={3} className="tab-paper flex-container">
+        <div className="flex-container" style={{flexDirection: 'row'}}>
+      
             <PieChart />
-          </Paper>
-          <Paper zDepth={3} className="tab-paper flex-container">
+      
             <BubbleChart />
-          </Paper>
-          <Paper zDepth={3} className="tab-paper flex-container">
+      
             <LineChart />
-          </Paper> */}
         </div>
 
 
