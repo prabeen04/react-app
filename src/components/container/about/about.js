@@ -33,7 +33,6 @@ class About extends React.Component {
   render() {
     return (
       <div>
-        <HoverButton />
         <Tabs value={this.state.value} onChange={this.handleChange}>
           <Tab style={{ backgroundColor: '#555'}} icon={<Dashboard />} label="RECENTS" value="a">
             <div className="flex-container">

@@ -1,6 +1,5 @@
 import React from 'react';
 import {Redirect, Link} from 'react-router-dom';
-
 import Paper from 'material-ui/Paper';
 import Divider from 'material-ui/Divider';
 import {Card, CardActions, CardHeader, CardText} from 'material-ui/Card';
@@ -12,6 +11,8 @@ import ResponsiveImage from '../../../assets/images/responsive.png';
 import MacbookImage from '../../../assets/images/macbook.png';
 import IphoneImage from '../../../assets/images/iphone-x.png';
 import BubbleButton from '../../common-components/buttons/bubble-button';
+import HoverButton from '../../common-components/buttons/hover-button'
+
 import './home.css';
 
 const styles = {
@@ -113,6 +114,7 @@ const Home  = (props) => {
         </div>
       </div>
       <div className="flex-container" style={{backgroundColor: '#202c56', fontFamily: 'Nanum Brush Script', fontSize: '1.5rem'}}>
+            <HoverButton />
         <p className="white-heading">Copyright reserved@2018</p>
       </div>
     </div>);

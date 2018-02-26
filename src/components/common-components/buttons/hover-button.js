@@ -11,7 +11,7 @@ const onmousemove = (e) => {
 const HoverButton = () => {
 
     return(
-        <button className="hover-button" onMouseMove={onmousemove}><span>Hover Over Me</span></button>
+        <button className="hover-button" onMouseMove={onmousemove}><span>Contact Me</span></button>
     );
 }
 export default HoverButton;
