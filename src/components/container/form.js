@@ -2,9 +2,7 @@ import React from 'react';
 import TextField from 'material-ui/TextField';
 
 
-class Form extends React.Component{
-
-  render(){
+const Form = () => {
     return(
       <div>
         <TextField
@@ -20,6 +18,5 @@ class Form extends React.Component{
      </div>
     );
   }
-}
 
 export default Form;
