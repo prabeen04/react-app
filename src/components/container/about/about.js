@@ -28,7 +28,10 @@ class About extends React.Component {
     this.setState({ value: value });
   };
   componentDidMount() {
-
+    fetch('http://localhost:8080/api/users')
+      .then(res => res.json())
+      .then(user => console.log(user))
+      .catch(err => console.log(err));
   }
   render() {
     return (
