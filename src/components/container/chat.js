@@ -1,5 +1,12 @@
 import React from 'react';
+import HorizontalLinearStepper from '../common-components/stepper/horizontal-linear-stepper';
 
-const Chat = () => <h1>Chat Component</h1>
+const Chat = () =>{
+    return(
+        <div>
+        <HorizontalLinearStepper/>
+    </div>
+    );
+} 
 
 export default Chat;

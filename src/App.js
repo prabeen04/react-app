@@ -12,7 +12,7 @@ import About from './components/container/about/about';
 import Feed from './components/container/feed';
 import NewsDetail from './components/container/news-detail';
 import Chat from './components/container/chat';
-import Profile from './components/container/profile';
+import Profile from './components/container/profile/profile';
 import Gallary from './components/container/gallary';
 import Planner from './components/container/planner/planner';
 import Login from './components/container/login';

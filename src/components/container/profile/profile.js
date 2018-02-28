@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import ChatBot from 'react-simple-chatbot';
+import HorizontalLinearStepper from '../../common-components/stepper/horizontal-linear-stepper';
+
 
 class Profile extends Component {
   constructor(props) {
