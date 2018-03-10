@@ -1,7 +1,8 @@
 import React from 'react';
 import { Route, Redirect, Link } from 'react-router-dom'
 import RaisedButton from 'material-ui/RaisedButton';
- import FilterInput from '../common-components/filter-input';
+import Paper from 'material-ui/Paper';
+import FilterInput from '../common-components/filter-input';
 
 const style = {
   margin: 12
@@ -33,12 +34,12 @@ class NewsButton extends React.Component{
         {this.props.news
           .filter(news => this.state.input === '' || news.id.includes(this.state.input))
           .map(news =>{
-           return <RaisedButton
+           return <Paper><RaisedButton
                       label={news.name}
                       key={news.id}
                       style={style}
                       primary={true}
-                      onClick={() => this.handleClick(news.id)} />
+                      onClick={() => this.handleClick(news.id)} /></Paper>
         })}
       </div>
     );

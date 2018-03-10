@@ -1,5 +1,7 @@
 import React from 'react';
 import NewsButton from './news-button';
+import NoData from '../common-components/no-data'
+
 import withAuthorization from '../HOC/withAuthorizationHOC';
 import { Route, Redirect } from 'react-router-dom';
 import LoadingContainer from '../common-components/loading-container';
@@ -34,7 +36,7 @@ class Feed extends React.Component {
   }
   render() {
     if (this.state.news.length == 0) {
-      return <LoadingContainer />;
+      return <NoData/>;
     }
     return (<div>
       <div className="flexbox-container">
